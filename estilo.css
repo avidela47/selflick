@@ -552,6 +552,31 @@ footer .info a{
     display: inline-block;
     margin: 0 15px;
 }
+
+.what {
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+
+.whatsapp-button {
+    margin-top: 30px;
+    display: inline-flex;
+    align-items: center;
+    color: #25D366;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
 /* *********** */
 /* RESPONSIVE */
 /* *********** */
@@ -650,29 +675,15 @@ footer .info a{
     footer .info p{
         margin-bottom: 10px;
     }
-}
-
-.what {
-    text-decoration: none;
-    font-size: 20px;
+    .whatsapp-button {
+        font-size: 24px; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+        padding: 8px 16px; /* Ajusta el padding para que se vea mejor en pantallas más pequeñas */
+    }
     
+    .whatsapp-button i {
+        font-size: 16px; /* Ajusta el tamaño del ícono en pantallas más pequeñas */
+    }
 }
 
-.whatsapp-button {
-    margin-top: 30px;
-    display: inline-flex;
-    align-items: center;
-    color: #25D366;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 36px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
 
-.whatsapp-button i {
-    margin-right: 10px;
-    font-size: 20px;
-}
 
