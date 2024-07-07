@@ -23,7 +23,7 @@ body{
     padding: 0 20px;
 }
 .contenedor-header header{
-    
+    max-width: 1366px;
     margin: auto;
     width: 100%;
     display: flex;
@@ -260,6 +260,7 @@ body{
     border-collapse: collapse;
     position: relative;
     bottom: 100px;
+    border: 2px solid red;
 }
 .servicios .info-servicios table td{
     padding: 30px;
@@ -277,6 +278,7 @@ body{
 .servicios .info-servicios p{
     line-height: 30px;
 }
+
 /* *********** */
 /* COMODIDADES */
 /* *********** */
@@ -576,6 +578,7 @@ footer .info a{
 /* RESPONSIVE */
 /* *********** */
 @media only screen and (max-width: 900px) {
+
     header nav{
         position: initial;
         display: none;
@@ -626,10 +629,15 @@ footer .info a{
     .servicios .contenido-seccion .fila .col{
        width: 100%;
     }
-    .servicios .info-servicios{
-        max-width: 300px;
+    .servicios .info-servicios table{
+        text-align: center;
+        background-color: #fff;
+        color: #1f283e;
+        border-collapse: collapse;
+        position: relative;
+        bottom: 100px;
+        border: 2px solid red;
         margin: auto;
-        display: flex;
     }
     .comodidades .fila{
         display: block;
