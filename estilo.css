@@ -568,6 +568,11 @@ footer .info a{
     transition: background-color 0.3s ease;
 }
 
+.what:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
 .whatsapp-button i {
     margin-right: 10px;
     font-size: 20px;
