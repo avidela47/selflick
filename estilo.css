@@ -260,7 +260,6 @@ body{
     border-collapse: collapse;
     position: relative;
     bottom: 100px;
-    border: 2px solid red;
 }
 .servicios .info-servicios table td{
     padding: 30px;
@@ -623,21 +622,23 @@ footer .info a{
         display: block;
         margin: auto;
     }
+    td {
+        display: inline-table;
+        margin-bottom: 10px;
+    }
+    i {
+        margin-top: 10px;
+    }
     .servicios .contenido-seccion .fila{
         display: block;
     }
     .servicios .contenido-seccion .fila .col{
        width: 100%;
     }
-    .servicios .info-servicios table{
-        text-align: center;
-        background-color: #fff;
-        color: #1f283e;
-        border-collapse: collapse;
-        position: relative;
-        bottom: 100px;
-        border: 2px solid red;
+    .servicios .info-servicios{
+        max-width: 300px;
         margin: auto;
+        display: flex;
     }
     .comodidades .fila{
         display: block;
