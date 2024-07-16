@@ -709,19 +709,6 @@ svg{
     position: absolute;
     inset: auto 10px 10px 10px;
 }
-@media screen and (max-width: 678px) {
-    .thumbnail{
-        justify-content: start;
-        bottom: 160px;
-    }
-    .slider .list .item .content h2{
-        font-size: 60px;
-    }
-    .arrows{
-        top: 10%;
-    }
-}
-
 
 /* *********** */
 /* RESPONSIVE */
@@ -840,6 +827,16 @@ svg{
     }    
     .whatsapp-button i {
         font-size: 16px; /* Ajusta el tamaño del ícono en pantallas más pequeñas */
+    }
+    .thumbnail{
+        justify-content: start;
+        bottom: 160px;
+    }
+    .slider .list .item .content h2{
+        font-size: 60px;
+    }
+    .arrows{
+        top: 10%;
     }
 }
 
