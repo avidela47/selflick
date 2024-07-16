@@ -712,7 +712,7 @@ svg{
 @media screen and (max-width: 678px) {
     .thumbnail{
         justify-content: start;
-        bottom: 30px;
+        bottom: 60px;
     }
     .slider .list .item .content h2{
         font-size: 60px;
