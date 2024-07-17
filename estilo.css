@@ -528,9 +528,14 @@ footer .info a{
     color: rgb(255, 0, 0);
 }
 
-span:hover {
+.txtRojo2:hover {
     text-decoration: none;
     color: rgb(0, 0, 0);
+}
+
+.txtRojo2 {
+    text-decoration: none;
+    color: #ff1133;
 }
 
 .whatsapp-button i {
