@@ -379,62 +379,73 @@ body{
 /* *********** */
 /* ENTRENADORES */
 /* *********** */
-.equipo{
+.equipo {
     max-width: 1100px;
     margin: auto;
     padding-top: 95px;
     background-color: #dde1e9;
 }
-.equipo .contenedor-titulo{
+.equipo .contenedor-titulo {
     display: flex;
     align-items: center;
     width: fit-content;
     margin: auto;
 }
-.equipo  .contenedor-titulo .numero{
+.equipo .contenedor-titulo .numero {
     color: #ff1133;
     font-weight: bold;
     display: block;
     font-size: 5rem;
 }
-.equipo .contenedor-titulo .info{
+.equipo .contenedor-titulo .info {
     margin-left: 30px;
 }
-.equipo .contenedor-titulo .info .frase{
+.equipo .contenedor-titulo .info .frase {
     color: #ff1133;
 }
-.equipo .contenedor-titulo .info h2{
+.equipo .contenedor-titulo .info h2 {
     font-size: 3rem;
 }
-.equipo .fila{
+.equipo .fila {
     margin: 50px 0;
     display: flex;
     justify-content: space-around;
 }
-.equipo .fila .col{
+.equipo .fila .col {
     width: 25%;
 }
-.equipo .fila .col img{
-   max-height: 400px;
-   display: block;
-   margin: auto;
-}
-.equipo .fila .info{
-    border: 5px solid #1f283e;
+.equipo .fila .col .card {
     text-align: center;
-    border-radius: 5px;
     padding: 20px;
+    border: 5px solid #1f283e;
+    border-radius: 10px;
     background: linear-gradient(#ff1133, #9a0e23);
     color: #fff;
 }
-.equipo .fila .info p{
-    margin: 20px 0;
+.equipo .fila .col .card .card-img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%;
 }
-.equipo .fila .info a{
+.equipo .fila .col .card .card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.equipo .fila .col .card .info h2 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+}
+.equipo .fila .col .card .info p {
+    margin: 10px 0 20px;
+}
+.equipo .fila .col .card .info a {
     color: #fff;
     text-decoration: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
     font-size: 20px;
 }
 /* *********** */
@@ -786,20 +797,16 @@ svg{
     .comodidades .fila .col img{
         max-width: 200px;
     }
-
-    .equipo .fila{
+    .equipo .fila {
         display: block;
     }
-    .equipo .fila .col{
+    .equipo .fila .col {
         width: 100%;
         margin-bottom: 20px;
     }
-    .equipo .fila .col img{
-        max-height: 200px;
-    }
-    .equipo .fila .info{
-        max-width: 250px;
-        margin: auto;
+    .equipo .fila .col .card-img {
+        width: 100px;
+        height: 100px;
     }
     .contacto .fila{
         display: block;
