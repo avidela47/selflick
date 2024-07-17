@@ -68,3 +68,28 @@ thumbnails.forEach((thumbnail, index) => {
         showSlider();
     })
 })
+
+// JavaScript for zoom functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const zoomables = document.querySelectorAll('.zoomable');
+    const zoomModal = document.getElementById('zoomModal');
+    const zoomedImg = document.getElementById('zoomedImg');
+    const zoomClose = document.getElementsByClassName('zoom-close')[0];
+
+    zoomables.forEach(img => {
+        img.addEventListener('click', function() {
+            zoomModal.style.display = 'block';
+            zoomedImg.src = this.src;
+        });
+    });
+
+    zoomClose.addEventListener('click', function() {
+        zoomModal.style.display = 'none';
+    });
+
+    zoomModal.addEventListener('click', function(event) {
+        if (event.target === zoomModal) {
+            zoomModal.style.display = 'none';
+        }
+    });
+});

@@ -321,7 +321,7 @@ body{
     display: block;
 }
 /* *********** */
-/* ENTRENADORES */
+/* EQUIPO */
 /* *********** */
 .equipo {
     max-width: 1100px;
@@ -548,24 +548,24 @@ svg{
 }
 
 /* css slider */
-.slider{
+.slider {
     height: 100vh;
     margin-top: -50px;
     position: relative;
 }
-.slider .list .item{
+.slider .list .item {
     position: absolute;
     inset: 0 0 0 0;
     overflow: hidden;
     opacity: 0;
     transition: .5s;
 }
-.slider .list .item img{
+.slider .list .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.slider .list .item::after{
+.slider .list .item::after {
     content: '';
     width: 100%;
     height: 100%;
@@ -576,7 +576,7 @@ svg{
         to top, #000 40%, transparent
     );
 }
-.slider .list .item .content{
+.slider .list .item .content {
     position: absolute;
     left: 10%;
     top: 20%;
@@ -584,20 +584,20 @@ svg{
     max-width: 80%;
     z-index: 1;
 }
-.slider .list .item .content p:nth-child(1){
+.slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 10px;
 }
-.slider .list .item .content h2{
+.slider .list .item .content h2 {
     font-size: 100px;
     margin: 0;
 }
-.slider .list .item.active{
+.slider .list .item.active {
     opacity: 1;
     z-index: 10;
 }
 @keyframes showContent {
-    to{
+    to {
         transform: translateY(0);
         filter: blur(0);
         opacity: 1;
@@ -605,25 +605,25 @@ svg{
 }
 .slider .list .item.active p:nth-child(1),
 .slider .list .item.active h2,
-.slider .list .item.active p:nth-child(3){
+.slider .list .item.active p:nth-child(3) {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
     animation: showContent .5s .7s ease-in-out 1 forwards;
 }
-.slider .list .item.active h2{
+.slider .list .item.active h2 {
     animation-delay: 1s;
 }
-.slider .list .item.active p:nth-child(3){
+.slider .list .item.active p:nth-child(3) {
     animation-duration: 1.3s;
 }
-.arrows{
+.arrows {
     position: absolute;
     top: 30%;
     right: 50px;
     z-index: 100;
 }
-.arrows button{
+.arrows button {
     background-color: #eee5;
     border: none;
     font-family: monospace;
@@ -634,11 +634,11 @@ svg{
     color: #eee;
     transition: .5s;
 }
-.arrows button:hover{
+.arrows button:hover {
     background-color: #eee;
     color: black;
 }
-.thumbnail{
+.thumbnail {
     position: absolute;
     bottom: 10px;
     z-index: 11;
@@ -651,26 +651,26 @@ svg{
     overflow: auto;
     justify-content: center;
 }
-.thumbnail::-webkit-scrollbar{
+.thumbnail::-webkit-scrollbar {
     width: 0;
 }
-.thumbnail .item{
+.thumbnail .item {
     width: 150px;
     height: 220px;
     filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0;
 }
-.thumbnail .item img{
+.thumbnail .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.thumbnail .item.active{
+.thumbnail .item.active {
     filter: brightness(1.5);
 }
-.thumbnail .item .content{
+.thumbnail .item .content {
     position: absolute;
     inset: auto 10px 10px 10px;
 }
@@ -789,17 +789,54 @@ svg{
     .whatsapp-button i {
         font-size: 16px; /* Ajusta el tamaño del ícono en pantallas más pequeñas */
     }
-    .thumbnail{
+    .thumbnail {
         justify-content: start;
         bottom: 160px;
     }
-    .slider .list .item .content h2{
+    .slider .list .item .content h2 {
         font-size: 60px;
     }
-    .arrows{
+    .arrows {
         top: 10%;
     }
-}
+}    
+    /* Styles for zoom modal */
+    .zoom-modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    .zoom-modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 605px;
+    }
+    .zoom-close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .zoom-close:hover,
+    .zoom-close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .zoomable {
+        cursor: zoom-in;
+    }
+
 
 
 
