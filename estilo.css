@@ -341,6 +341,10 @@
         padding: 100px 0;
     }
 
+    #prev {
+        margin: 5px;
+    }
+
     .galeria .contenido-seccion {
         max-width: 1100px;
         margin: auto;
