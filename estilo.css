@@ -712,6 +712,32 @@ svg{
     cursor: zoom-in;
 }
 
+.chatbot {
+    position: fixed;
+    bottom: -100%;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: bottom 0.5s ease;
+  }
+  
+  .chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+  }
+  
+  .chatbot-body {
+    padding: 10px;
+  }
+
+  .chtb {
+    color: #000;
+  }
+
 /* *********** */
 /* RESPONSIVE */
 /* *********** */
