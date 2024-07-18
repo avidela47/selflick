@@ -725,9 +725,11 @@ svg{
   }
   
   .chatbot-header {
-    background-color: #007bff;
+    background-image: linear-gradient(
+        to top, #000 80%, transparent);
     color: white;
     padding: 10px;
+    text-align: center;
   }
   
   .chatbot-body {
