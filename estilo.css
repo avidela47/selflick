@@ -88,6 +88,12 @@
         font-family: 'ASTERA', sans-serif;
     }
 
+    .logo2 {
+        font-size: 8px;
+        text-align: center;
+        font-family: 'ASTERA', sans-serif;
+      }
+
     /* *********** */
     /* SECCIÓN INICIO */
     /* *********** */
@@ -952,290 +958,173 @@
       }
 
     /* *********** */
-/* MEDIOS PARA TABLETAS Y MÓVILES */
-/* *********** */
+    /* RESPONSIVE */
+    /* *********** */
+    @media only screen and (max-width: 900px) {
 
-/* Estilos generales para tabletas y móviles */
-@media (max-width: 1024px) {
-    .contenedor-header {
-        padding: 0 10px;
-    }
-
-    .contenedor-header header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-
-    .contenedor-header header .logo {
-        font-size: 8px;
-        text-align: left;
-    }
-
-    .nav-responsive {
-        display: block;
-    }
-
-    .contenedor-header header nav {
-        display: none; /* Ocultar el menú de navegación para versiones móviles */
-    }
-
-    .contenedor-header header .redes {
-        margin-top: 10px;
-    }
-
-    .inicio .info h2 {
-        font-size: 2.5rem;
-    }
-
-    .inicio .info p {
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-
-    .nosotros .fila {
-        flex-direction: column;
-    }
-
-    .nosotros .fila .col {
-        width: 100%;
-    }
-
-    .nosotros .fila .col img {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .nosotros .fila-nosotros {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nosotros .fila-nosotros h2 {
-        font-size: 1.5rem;
-    }
-
-    .servicios .fila {
-        flex-direction: column;
-    }
-
-    .servicios .fila .col {
-        width: 100%;
-    }
-
-    .servicios .info-servicios table {
-        font-size: 14px;
-    }
-
-    .galeria .fila {
-        flex-direction: column;
-    }
-
-    .galeria .fila .col img {
-        width: 100%;
-    }
-
-    .equipo .fila {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .equipo .fila .col {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .equipo .fila .col .card {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .contacto .fila {
-        flex-direction: column;
-    }
-
-    .contacto .fila .col {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .contacto textarea {
-        height: 150px;
-    }
-
-    .chatbot {
-        width: 100%;
-        height: auto;
-        bottom: 0;
-        border-radius: 0;
-    }
-
-    .chatbot-header {
-        font-size: 16px;
-    }
-
-    .chatbot-body {
-        padding: 5px;
-    }
-
-    #input-field {
-        font-size: 12px;
-    }
-
-    .send-icon {
-        font-size: 18px;
-    }
-
-    /* Estilos específicos para móviles */
-    @media (max-width: 768px) {
-        .contenedor-header {
-            padding: 0 5px;
+        header nav {
+            position: initial;
+            display: none;
+            transform: translate(0);
         }
 
-        .contenedor-header header {
-            padding: 5px 0;
-        }
-
-        .contenedor-header header .logo {
-            font-size: 6px;
+        header .redes {
+            display: none;
         }
 
         .nav-responsive {
-            font-size: 20px;
+            display: block;
         }
 
-        .inicio .info h2 {
-            font-size: 2rem;
+        nav.responsive {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #151623;
+            z-index: 99;
         }
 
-        .inicio .info p {
-            font-size: 12px;
+        nav.responsive a {
+            display: block;
+            width: fit-content;
+            margin: 10px auto;
+            font-size: 30px;
+        }
+
+        .inicio .opciones {
+            display: none;
+        }
+
+        .nosotros .fila {
+            display: block;
         }
 
         .nosotros .fila .col {
-            text-align: center;
+            width: 100%;
+            margin: auto;
         }
 
         .nosotros .fila .col img {
-            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: auto;
+        }
+
+        td {
+            display: inline-table;
             margin-bottom: 10px;
         }
 
-        .nosotros .fila-nosotros h2 {
-            font-size: 1.25rem;
+        i {
+            margin-top: 10px;
         }
 
-        .servicios .info-servicios table {
-            font-size: 12px;
+        .servicios .contenido-seccion .fila {
+            display: block;
         }
 
-        .galeria .fila .col img {
+        .servicios .contenido-seccion .fila .col {
             width: 100%;
         }
 
-        .equipo .fila .col .card {
-            padding: 5px;
+        .servicios .info-servicios {
+            max-width: 300px;
+            margin: auto;
+            display: flex;
         }
 
-        .contacto .fila input,
-        .contacto textarea {
-            font-size: 16px;
+        .comodidades .fila {
+            display: block;
         }
 
-        .contacto button {
-            font-size: 16px;
+        .comodidades .fila .col {
+            width: 100%;
         }
 
-        .chatbot-header {
-            font-size: 14px;
+        .comodidades .fila .col img {
+            max-width: 200px;
         }
 
-        .chatbot-body {
-            padding: 5px;
+        .equipo .fila {
+            display: block;
         }
 
-        #input-field {
-            font-size: 12px;
+        .equipo .fila .col {
+            width: 100%;
+            margin-bottom: 20px;
         }
 
-        .send-icon {
-            font-size: 16px;
-        }
-    }
-
-    /* Estilos para teléfonos más pequeños */
-    @media (max-width: 480px) {
-        .contenedor-header {
-            padding: 0 3px;
+        .equipo .fila .col .card-img {
+            width: 100px;
+            height: 100px;
         }
 
-        .contenedor-header header {
-            padding: 5px 0;
+        .contacto .fila {
+            display: block;
         }
 
-        .contenedor-header header .logo {
-            font-size: 4px;
+        .contacto .fila .col {
+            width: 100%;
+            margin-bottom: 20px;
         }
 
-        .nav-responsive {
-            font-size: 18px;
+        .contacto .fila-datos {
+            display: block;
         }
 
-        .inicio .info h2 {
-            font-size: 1.5rem;
+        .contacto .fila-datos .col {
+            margin-bottom: 20px;
         }
 
-        .inicio .info p {
-            font-size: 10px;
-        }
-
-        .nosotros .fila .col {
+        footer .info {
+            display: block;
             text-align: center;
         }
 
-        .nosotros .fila .col img {
-            width: 100%;
+        footer .info p {
+            margin-bottom: 10px;
         }
 
-        .nosotros .fila-nosotros h2 {
-            font-size: 1rem;
+        .whatsapp-button {
+            font-size: 24px;
+            /* Reduce el tamaño de la fuente en pantallas más pequeñas */
+            padding: 8px 16px;
+            /* Ajusta el padding para que se vea mejor en pantallas más pequeñas */
         }
 
-        .servicios .info-servicios table {
-            font-size: 10px;
+        .whatsapp-button i {
+            font-size: 16px;
+            /* Ajusta el tamaño del ícono en pantallas más pequeñas */
         }
 
-        .galeria .fila .col img {
-            width: 100%;
+        .thumbnail {
+            justify-content: start;
+            bottom: 160px;
         }
 
-        .equipo .fila .col .card {
-            padding: 5px;
+        .slider .list .item .content h2 {
+            font-size: 60px;
         }
 
-        .contacto .fila input,
-        .contacto textarea {
-            font-size: 14px;
+        .arrows {
+            top: 10%;
         }
 
-        .contacto button {
-            font-size: 14px;
+        .zoom-modal-content {
+            width: 90%;
+            max-width: 90%;
+            margin-top: 50%;
+            transform: translateY(-50%);
         }
 
-        .chatbot-header {
-            font-size: 12px;
-        }
-
-        .chatbot-body {
-            padding: 5px;
-        }
-
-        #input-field {
-            font-size: 12px;
-        }
-
-        .send-icon {
-            font-size: 14px;
+        .zoom-close {
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
         }
     }
-}
