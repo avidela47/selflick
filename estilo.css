@@ -1127,6 +1127,9 @@
             right: 20px;
             font-size: 30px;
         }
+        .marca {
+            font-size: 50px !important;
+         }
     }
 
     
