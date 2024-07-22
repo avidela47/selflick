@@ -952,198 +952,290 @@
       }
 
     /* *********** */
-    /* RESPONSIVE */
-    /* *********** */
-    /* General styles for mobile devices */
-@media (max-width: 768px) {
+/* MEDIOS PARA TABLETAS Y MÓVILES */
+/* *********** */
+
+/* Estilos generales para tabletas y móviles */
+@media (max-width: 1024px) {
+    .contenedor-header {
+        padding: 0 10px;
+    }
+
     .contenedor-header header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
     }
-  
-    .contenedor-header header h1 {
-      text-align: center;
+
+    .contenedor-header header .logo {
+        font-size: 8px;
+        text-align: left;
     }
-  
-    nav#nav {
-      display: none;
-    }
-  
+
     .nav-responsive {
-      display: block;
+        display: block;
     }
-  
-    .inicio .contenido-seccion {
-      flex-direction: column;
-      align-items: center;
+
+    .contenedor-header header nav {
+        display: none; /* Ocultar el menú de navegación para versiones móviles */
     }
-  
-    .inicio .info {
-      text-align: center;
+
+    .contenedor-header header .redes {
+        margin-top: 10px;
     }
-  
-    .opciones {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    .inicio .info h2 {
+        font-size: 2.5rem;
     }
-  
-    .nosotros .fila,
+
+    .inicio .info p {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .nosotros .fila {
+        flex-direction: column;
+    }
+
+    .nosotros .fila .col {
+        width: 100%;
+    }
+
+    .nosotros .fila .col img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .nosotros .fila-nosotros {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros .fila-nosotros h2 {
+        font-size: 1.5rem;
+    }
+
     .servicios .fila {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
-    .nosotros .col,
-    .servicios .col {
-      width: 100%;
+
+    .servicios .fila .col {
+        width: 100%;
     }
-  
-    .info-servicios table {
-      width: 100%;
+
+    .servicios .info-servicios table {
+        font-size: 14px;
     }
-  
-    .info-servicios table td {
-      width: 100%;
-      padding: 10px;
+
+    .galeria .fila {
+        flex-direction: column;
     }
-  
-    .galeria .container,
-    .equipo .contenido-seccion,
-    .contacto .contenido-seccion {
-      padding: 0 20px;
+
+    .galeria .fila .col img {
+        width: 100%;
     }
-  
-    .galeria .list,
-    .thumbnail {
-      display: flex;
-      flex-direction: column;
+
+    .equipo .fila {
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .galeria .item,
-    .thumbnail .item {
-      margin-bottom: 20px;
+
+    .equipo .fila .col {
+        width: 80%;
+        margin-bottom: 20px;
     }
-  
-    .fila-nosotros {
-      flex-direction: column;
-      align-items: center;
+
+    .equipo .fila .col .card {
+        width: 100%;
+        padding: 10px;
     }
-  
-    .fila-nosotros .col1,
-    .fila-nosotros .cel {
-      width: 100%;
-      text-align: center;
+
+    .contacto .fila {
+        flex-direction: column;
     }
-  
-    .fila-datos {
-      flex-direction: column;
-      align-items: center;
+
+    .contacto .fila .col {
+        width: 100%;
+        margin-bottom: 20px;
     }
-  
-    .fila-datos .col {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
+
+    .contacto textarea {
+        height: 150px;
     }
-  
-    footer .info {
-      text-align: center;
-      padding: 20px;
+
+    .chatbot {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        border-radius: 0;
     }
-  }
-  
-  /* General styles for tablets */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .contenedor-header header {
-      flex-direction: column;
-      align-items: center;
+
+    .chatbot-header {
+        font-size: 16px;
     }
-  
-    nav#nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    .chatbot-body {
+        padding: 5px;
     }
-  
-    .inicio .contenido-seccion {
-      flex-direction: column;
-      align-items: center;
+
+    #input-field {
+        font-size: 12px;
     }
-  
-    .inicio .info {
-      text-align: center;
+
+    .send-icon {
+        font-size: 18px;
     }
-  
-    .opciones {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    /* Estilos específicos para móviles */
+    @media (max-width: 768px) {
+        .contenedor-header {
+            padding: 0 5px;
+        }
+
+        .contenedor-header header {
+            padding: 5px 0;
+        }
+
+        .contenedor-header header .logo {
+            font-size: 6px;
+        }
+
+        .nav-responsive {
+            font-size: 20px;
+        }
+
+        .inicio .info h2 {
+            font-size: 2rem;
+        }
+
+        .inicio .info p {
+            font-size: 12px;
+        }
+
+        .nosotros .fila .col {
+            text-align: center;
+        }
+
+        .nosotros .fila .col img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .nosotros .fila-nosotros h2 {
+            font-size: 1.25rem;
+        }
+
+        .servicios .info-servicios table {
+            font-size: 12px;
+        }
+
+        .galeria .fila .col img {
+            width: 100%;
+        }
+
+        .equipo .fila .col .card {
+            padding: 5px;
+        }
+
+        .contacto .fila input,
+        .contacto textarea {
+            font-size: 16px;
+        }
+
+        .contacto button {
+            font-size: 16px;
+        }
+
+        .chatbot-header {
+            font-size: 14px;
+        }
+
+        .chatbot-body {
+            padding: 5px;
+        }
+
+        #input-field {
+            font-size: 12px;
+        }
+
+        .send-icon {
+            font-size: 16px;
+        }
     }
-  
-    .nosotros .fila,
-    .servicios .fila {
-      flex-direction: column;
-      align-items: center;
+
+    /* Estilos para teléfonos más pequeños */
+    @media (max-width: 480px) {
+        .contenedor-header {
+            padding: 0 3px;
+        }
+
+        .contenedor-header header {
+            padding: 5px 0;
+        }
+
+        .contenedor-header header .logo {
+            font-size: 4px;
+        }
+
+        .nav-responsive {
+            font-size: 18px;
+        }
+
+        .inicio .info h2 {
+            font-size: 1.5rem;
+        }
+
+        .inicio .info p {
+            font-size: 10px;
+        }
+
+        .nosotros .fila .col {
+            text-align: center;
+        }
+
+        .nosotros .fila .col img {
+            width: 100%;
+        }
+
+        .nosotros .fila-nosotros h2 {
+            font-size: 1rem;
+        }
+
+        .servicios .info-servicios table {
+            font-size: 10px;
+        }
+
+        .galeria .fila .col img {
+            width: 100%;
+        }
+
+        .equipo .fila .col .card {
+            padding: 5px;
+        }
+
+        .contacto .fila input,
+        .contacto textarea {
+            font-size: 14px;
+        }
+
+        .contacto button {
+            font-size: 14px;
+        }
+
+        .chatbot-header {
+            font-size: 12px;
+        }
+
+        .chatbot-body {
+            padding: 5px;
+        }
+
+        #input-field {
+            font-size: 12px;
+        }
+
+        .send-icon {
+            font-size: 14px;
+        }
     }
-  
-    .nosotros .col,
-    .servicios .col {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .info-servicios table {
-      width: 100%;
-    }
-  
-    .info-servicios table td {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    .galeria .container,
-    .equipo .contenido-seccion,
-    .contacto .contenido-seccion {
-      padding: 0 20px;
-    }
-  
-    .galeria .list,
-    .thumbnail {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .galeria .item,
-    .thumbnail .item {
-      margin-bottom: 20px;
-    }
-  
-    .fila-nosotros {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .fila-nosotros .col1,
-    .fila-nosotros .cel {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .fila-datos {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .fila-datos .col {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  
-    footer .info {
-      text-align: center;
-      padding: 20px;
-    }
-  }
-  
+}
