@@ -1,4 +1,5 @@
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;400;600;800;900&display=swap');
+    @import url('https://fonts.cdnfonts.com/css/astera');
 
     * {
         margin: 0;
@@ -34,12 +35,23 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
+        padding:  0;
         color: #fff;
+        font-family: 'ASTERA', sans-serif;
     }
 
     .txtRojo {
         color: #ff1133;
+        font-family: 'Barlow'
+    }
+
+    .txtRojo3 {
+        color: #ff1133;
+        font-family: 'ASTERA', sans-serif;
+    }
+
+    .titulo {
+        font-size: 60px;
     }
 
     .contenedor-header header nav a {
@@ -68,6 +80,12 @@
     .nav-responsive {
         display: none;
         font-size: 25px;
+    }
+
+    .logo {
+        font-size: 10px;
+        text-align: center;
+        font-family: 'ASTERA', sans-serif;
     }
 
     /* *********** */
@@ -100,6 +118,7 @@
     .inicio .info h2 {
         font-size: 4rem;
         letter-spacing: 3px;
+        font-family: 'ASTERA', sans-serif;
     }
 
     .inicio .info p {
