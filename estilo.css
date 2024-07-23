@@ -1138,6 +1138,9 @@
         .marca {
             font-size: 50px !important;
          }
+        .contenedor-header header {
+            max-width: 900px;
+        }
     }
 
     
