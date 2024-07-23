@@ -43,12 +43,12 @@
     }
 
     .txtRojo {
-        color: #ff0026;
+        color: #ff0000;
         font-family: 'Barlow'
     }
 
     .txtRojo3 {
-        color: #ff1133;
+        color: #ff0000;
         font-family: 'Bemio', sans-serif;
     }
 
@@ -65,7 +65,7 @@
     }
 
     .contenedor-header header nav a:hover {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .contenedor-header header .redes a {
@@ -76,7 +76,7 @@
     }
 
     .contenedor-header header .redes a:hover {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .nav-responsive {
@@ -197,7 +197,7 @@
     }
 
     .nosotros .fila .col .contenedor-titulo .numero {
-        color: #ff1133;
+        color: #ff0000;
         font-weight: bold;
         display: block;
         font-size: 5rem;
@@ -208,7 +208,7 @@
     }
 
     .nosotros .fila .col .contenedor-titulo .info .frase {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .nosotros .fila .col .contenedor-titulo .info h2 {
@@ -244,7 +244,7 @@
     }
 
     .nosotros .fila-nosotros button {
-        background-color: #ff1133;
+        background-color: #ff0000;
         border: none;
         color: #fff;
         padding: 15px 35px;
@@ -296,7 +296,7 @@
     }
 
     .servicios .fila .col .contenedor-titulo .numero {
-        color: #ff1133;
+        color: #ff0000;
         font-weight: bold;
         display: block;
         font-size: 5rem;
@@ -307,7 +307,7 @@
     }
 
     .servicios .fila .col .contenedor-titulo .info .frase {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .servicios .fila .col .contenedor-titulo .info h2 {
@@ -343,7 +343,7 @@
     }
 
     .servicios .info-servicios table td i {
-        color: #ff1133;
+        color: #ff0000;
         font-size: 2.5rem;
         margin-bottom: 20px;
     }
@@ -385,7 +385,7 @@
     }
 
     .galeria .contenedor-titulo .numero {
-        color: #ff1133;
+        color: #ff0000;
         font-weight: bold;
         display: block;
         font-size: 5rem;
@@ -396,7 +396,7 @@
     }
 
     .galeria .contenedor-titulo .info .frase {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .galeria .contenedor-titulo .info h2 {
@@ -430,7 +430,7 @@
     }
 
     .equipo .contenedor-titulo .numero {
-        color: #ff1133;
+        color: #ff0000;
         font-weight: bold;
         display: block;
         font-size: 5rem;
@@ -441,7 +441,7 @@
     }
 
     .equipo .contenedor-titulo .info .frase {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .equipo .contenedor-titulo .info h2 {
@@ -523,7 +523,7 @@
     }
 
     .contacto .contenedor-titulo .numero {
-        color: #ff1133;
+        color: #ff0000;
         font-weight: bold;
         display: block;
         font-size: 5rem;
@@ -534,7 +534,7 @@
     }
 
     .contacto .contenedor-titulo .info .frase {
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .contacto .contenedor-titulo .info h2 {
@@ -576,7 +576,7 @@
         margin: auto;
         margin-top: 30px;
         border: none;
-        background-color: #ff1133;
+        background-color: #ff0000;
         color: #fff;
         font-size: 18px;
         padding: 10px 25px;
@@ -593,7 +593,7 @@
     }
 
     .contacto i {
-        color: #ff1133;
+        color: #ff0000;
         display: inline-block;
         margin-right: 10px;
     }
@@ -656,7 +656,7 @@
 
     .txtRojo2 {
         text-decoration: none;
-        color: #ff1133;
+        color: #ff0000;
     }
 
     .whatsapp-button i {
