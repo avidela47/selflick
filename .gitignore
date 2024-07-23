@@ -1,2 +1,3 @@
-/desktop.ini
-/envLocal.txt
+# Ignorar archivos específicos
+desktop.ini
+envLocal.txt
