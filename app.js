@@ -119,3 +119,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    const serviceID = 'service_06shzpe';
+    const templateID = 'template_fb6dc5b';
+  
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        alert('Mensaje enviado con éxito!');
+        document.getElementById('contact-form').reset();
+      }, (err) => {
+        alert(JSON.stringify(err));
+      });
+  });
+  
