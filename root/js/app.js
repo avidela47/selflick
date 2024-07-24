@@ -1,5 +1,6 @@
 let menuVisible = false;
-//Función que oculta o muestra el menu
+
+// Función que oculta o muestra el menú de navegación
 function mostrarOcultarMenu() {
     if (menuVisible) {
         document.getElementById("nav").classList = "";
@@ -9,8 +10,9 @@ function mostrarOcultarMenu() {
         menuVisible = true;
     }
 }
+
+// Función que oculta el menú cuando se selecciona una opción
 function seleccionar() {
-    //oculto el menu una vez que selecciono una opcion
     document.getElementById("nav").classList = "";
     menuVisible = false;
 }
@@ -20,10 +22,11 @@ let next = document.getElementById('next');
 let prev = document.getElementById('prev');
 let thumbnails = document.querySelectorAll('.thumbnail .item');
 
-// config param
+// Parámetros de configuración
 let countItem = items.length;
 let itemActive = 0;
-// event next click
+
+// Evento para el clic en el botón "siguiente"
 next.onclick = function () {
     itemActive = itemActive + 1;
     if (itemActive >= countItem) {
@@ -31,7 +34,8 @@ next.onclick = function () {
     }
     showSlider();
 }
-//event prev click
+
+// Evento para el clic en el botón "anterior"
 prev.onclick = function () {
     itemActive = itemActive - 1;
     if (itemActive < 0) {
@@ -39,29 +43,32 @@ prev.onclick = function () {
     }
     showSlider();
 }
-// auto run slider
+
+// Ejecución automática del slider cada 5 segundos
 let refreshInterval = setInterval(() => {
     next.click();
 }, 5000)
+
+// Función para mostrar el slider
 function showSlider() {
-    // remove item active old
+    // Eliminar la clase "active" del elemento anterior
     let itemActiveOld = document.querySelector('.slider .list .item.active');
     let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
     itemActiveOld.classList.remove('active');
     thumbnailActiveOld.classList.remove('active');
 
-    // active new item
+    // Agregar la clase "active" al nuevo elemento
     items[itemActive].classList.add('active');
     thumbnails[itemActive].classList.add('active');
 
-    // clear auto time run slider
+    // Reiniciar el intervalo de tiempo automático del slider
     clearInterval(refreshInterval);
     refreshInterval = setInterval(() => {
         next.click();
     }, 5000)
 }
 
-// click thumbnail
+// Evento para el clic en las miniaturas
 thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener('click', () => {
         itemActive = index;
@@ -69,13 +76,14 @@ thumbnails.forEach((thumbnail, index) => {
     })
 })
 
-// JavaScript for zoom functionality
+// JavaScript para la funcionalidad de zoom
 document.addEventListener('DOMContentLoaded', () => {
     const zoomables = document.querySelectorAll('.zoomable');
     const zoomModal = document.getElementById('zoomModal');
     const zoomedImg = document.getElementById('zoomedImg');
     const zoomClose = document.getElementsByClassName('zoom-close')[0];
 
+    // Evento para el clic en una imagen zoomable
     zoomables.forEach(img => {
         img.addEventListener('click', function () {
             zoomModal.style.display = 'block';
@@ -83,10 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Evento para cerrar el modal de zoom
     zoomClose.addEventListener('click', function () {
         zoomModal.style.display = 'none';
     });
 
+    // Evento para cerrar el modal de zoom al hacer clic fuera de la imagen
     zoomModal.addEventListener('click', function (event) {
         if (event.target === zoomModal) {
             zoomModal.style.display = 'none';
@@ -94,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// JavaScript para mostrar/ocultar el chatbot según la posición del scroll
 document.addEventListener('DOMContentLoaded', () => {
     const footerSection = document.getElementById('footer');
     const chatbot = document.getElementById('chatbot');
@@ -120,31 +131,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+// JavaScript para manejar el envío del formulario de contacto
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
-  
+
     const serviceID = 'service_06shzpe';
     const templateID = 'template_fb6dc5b';
-  
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        alert('Mensaje enviado con éxito!');
-        document.getElementById('contact-form').reset();
-      }, (err) => {
-        alert(JSON.stringify(err));
-      });
-  });
 
-  document.getElementById("submit-button").addEventListener("click", function() {
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            alert('Mensaje enviado con éxito!');
+            document.getElementById('contact-form').reset();
+        }, (err) => {
+            alert(JSON.stringify(err));
+        });
+});
+
+// JavaScript para manejar el envío de mensajes del chatbot
+document.getElementById("submit-button").addEventListener("click", function () {
     sendMessage();
 });
 
-document.getElementById("input-field").addEventListener("keypress", function(event) {
+document.getElementById("input-field").addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         sendMessage();
     }
 });
 
+// Función para enviar mensajes del chatbot
 function sendMessage() {
     const inputField = document.getElementById("input-field");
     const message = inputField.value.trim();
@@ -160,6 +174,7 @@ function sendMessage() {
     }
 }
 
+// Función para agregar mensajes al cuerpo del chatbot
 function appendMessage(sender, message) {
     const chatbotBody = document.getElementById("chatbot-body");
     const messageElement = document.createElement("p");
@@ -169,6 +184,7 @@ function appendMessage(sender, message) {
     chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
 }
 
+// Función para generar la respuesta del bot
 function botResponse(userMessage) {
     const responses = {
         greetings: ["¡Hola! Leo, Pagate el asado y el vino!!!"],
@@ -191,4 +207,3 @@ function botResponse(userMessage) {
 
     appendMessage("bot", response);
 }
-  
