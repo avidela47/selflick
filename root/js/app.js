@@ -95,11 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const contactoSection = document.getElementById('contacto');
+    const footerSection = document.getElementById('footer');
     const chatbot = document.getElementById('chatbot');
 
     window.addEventListener('scroll', () => {
-        const sectionPosition = contactoSection.getBoundingClientRect();
+        const sectionPosition = footerSection.getBoundingClientRect();
         const isVisible = sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0;
 
         if (isVisible) {
