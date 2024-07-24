@@ -134,4 +134,61 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         alert(JSON.stringify(err));
       });
   });
+
+  document.getElementById("submit-button").addEventListener("click", function() {
+    sendMessage();
+});
+
+document.getElementById("input-field").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const inputField = document.getElementById("input-field");
+    const message = inputField.value.trim();
+
+    if (message !== "") {
+        appendMessage("user", message);
+        inputField.value = "";
+
+        // Simular la respuesta del bot
+        setTimeout(() => {
+            botResponse(message);
+        }, 500);
+    }
+}
+
+function appendMessage(sender, message) {
+    const chatbotBody = document.getElementById("chatbot-body");
+    const messageElement = document.createElement("p");
+    messageElement.className = sender === "user" ? "user-message" : "bot-message";
+    messageElement.innerText = message;
+    chatbotBody.appendChild(messageElement);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
+}
+
+function botResponse(userMessage) {
+    const responses = {
+        greetings: ["¡Hola! ¿Cómo puedo ayudarte hoy?", "¡Hola! ¿Qué tal?", "¡Hola! ¿En qué puedo asistirte?"],
+        farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
+        default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
+        weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
+    };
+
+    let response = responses.default[Math.floor(Math.random() * responses.default.length)];
+
+    const messageLower = userMessage.toLowerCase();
+
+    if (messageLower.includes("hola")) {
+        response = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
+    } else if (messageLower.includes("adios") || messageLower.includes("hasta luego")) {
+        response = responses.farewells[Math.floor(Math.random() * responses.farewells.length)];
+    } else if (messageLower.includes("clima") || messageLower.includes("tiempo")) {
+        response = responses.weather[Math.floor(Math.random() * responses.weather.length)];
+    }
+
+    appendMessage("bot", response);
+}
   
