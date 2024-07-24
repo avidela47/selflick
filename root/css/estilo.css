@@ -101,7 +101,7 @@
     /* *********** */
     .inicio {
         height: 100vh;
-        background: linear-gradient(rgba(0, 1, 3, 0.5), rgba(0, 0, 0, .7)), url(img/fondo.jpg);
+        background: linear-gradient(rgba(0, 1, 3, 0.5), rgba(0, 0, 0, .7)), url(../img/fondo.jpg);
         background-size: cover;
         background-position: center center;
         color: #fff;
@@ -265,7 +265,7 @@
     }
 
     .servicios .contenido-seccion {
-        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(img/fondo-servicios.jpg);
+        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(../img/fondo-servicios.jpg);
         background-size: cover;
         background-position: center center;
         margin: auto;
@@ -362,7 +362,7 @@
     /* ********** */
     .galeria {
         color: #fff;
-        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(img/fondo-galeria.jpg);
+        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(../img/fondo-galeria.jpg);
         background-size: cover;
         background-position: center center;
         padding: 100px 0;
@@ -503,7 +503,7 @@
     /* *********** */
     .contacto {
         color: #fff;
-        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(img/fondo.jpg);
+        background: linear-gradient(rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)), url(../img/fondo.jpg);
         background-size: cover;
         background-position: center center;
         padding: 100px 20px;
