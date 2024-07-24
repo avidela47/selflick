@@ -171,7 +171,7 @@ function appendMessage(sender, message) {
 
 function botResponse(userMessage) {
     const responses = {
-        greetings: ["¡Hola! ¿Qué tal?", "¡Hola! ¿En qué puedo asistirte?"],
+        greetings: ["¡Hola! Leo, Pagate el asado y el vino!!!"],
         farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
         default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
         weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
