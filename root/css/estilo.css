@@ -1,11 +1,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;400;600;800;900&display=swap');
     @import url('https://db.onlinewebfonts.com/c/5db8bbfb6a548babd3c88584bc301dd2?family=Bemio');
+    @import url('https://fonts.cdnfonts.com/css/astera');
 
     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-        font-family: 'Barlow';
+        box-sizing: border-box;        
     }
 
     html {
@@ -19,6 +19,12 @@
     /* *********** */
     /* ENCABEZADO - MENU */
     /* *********** */
+    h1 img {
+        margin-top: -15px;
+        width: 150px; /* Ajusta este valor según el tamaño deseado */
+        height: auto; /* Mantiene la proporción original de la imagen */
+    }
+    
     .contenedor-header {
         width: 100%;
         position: fixed;
@@ -37,9 +43,8 @@
         align-items: center;
         padding:  0;
         color: #fff;
-        font-family: 'Bemio', sans-serif;
-        margin-top: -60px;
-        margin-bottom: -50px;
+        font-family: 'Barlow';
+       
     }
 
     .txtRojo {
@@ -49,7 +54,7 @@
 
     .txtRojo3 {
         color: #ff0000;
-        font-family: 'Bemio', sans-serif;
+        font-family: 'Barlow', sans-serif;
     }
 
     .titulo {
@@ -84,18 +89,6 @@
         font-size: 25px;
     }
 
-    .logo {
-        font-size: 10px;
-        text-align: center;
-        font-family: 'Bemio', sans-serif;
-    }
-
-    .logo2 {
-        font-size: 8px;
-        text-align: center;
-        font-family: 'Bemio', sans-serif;
-      }
-
     /* *********** */
     /* SECCIÓN INICIO */
     /* *********** */
@@ -126,7 +119,7 @@
     .inicio .info h2 {
         font-size: 4rem;
         letter-spacing: 3px;
-        font-family: 'Bemio', sans-serif;
+        font-family: 'Barlow', sans-serif;
     }
 
     .inicio .info p {
