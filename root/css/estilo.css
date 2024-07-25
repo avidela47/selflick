@@ -849,16 +849,18 @@
     }
 
     .chatbot {
-        position: fixed;
-        bottom: -100%;
-        right: 20px;
         width: 250px;
-        background-color: #fff;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ccc;
         border-radius: 10px;
-        overflow: hidden;
-        transition: bottom 0.5s ease;
-        color: black;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        color: #000;
+        font-size: 15px;
     }
 
     .chatbot-header {
@@ -958,6 +960,47 @@
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
       }
+
+    /* Estilo para los botones de servicio */
+.service-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.service-button {
+  background-color: #007BFF; /* Color de fondo */
+  border: none;
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Tamaño de la fuente */
+  margin: 5px;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.service-button:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el cursor */
+}
+
+#carteleria-corporea, #merchandising, #impresiones-3d, #filmacion-dron, #edicion-videos, #contactame {
+    background-color: transparent;
+    color: gray;
+    font-size: 12px;
+    border: solid 1px black;
+    margin: 5px;
+    display: block;
+
+}
+
+#carteleria-corporea:hover, #merchandising:hover, #impresiones-3d:hover, #filmacion-dron:hover, #edicion-videos:hover, #contactame:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
 
     /* *********** */
     /* RESPONSIVE */

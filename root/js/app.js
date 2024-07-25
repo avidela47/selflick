@@ -187,7 +187,10 @@ function appendMessage(sender, message) {
 // Función para generar la respuesta del bot
 function botResponse(userMessage) {
     const responses = {
-        greetings: ["¡Hola! Leo, Pagate el asado y el vino!!!"],
+        greetings: [
+            "¡Hola! Somos Selflick, Industria Gráfica. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿En qué te podemos ayudar? Aquí están nuestros servicios:",
+            "¡Hola! Soy el bot de Selflick. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿Qué servicio necesitas? Mira nuestras opciones:"
+        ],
         farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
         default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
         weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
@@ -199,11 +202,31 @@ function botResponse(userMessage) {
 
     if (messageLower.includes("hola")) {
         response = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
+        appendMessage("bot", response);
+
+        // Mostrar los botones de servicio
+        const chatbotBody = document.getElementById("chatbot-body");
+        const buttonsHtml = `
+            <div class="service-buttons">
+              <button class="service-button" id="carteleria-corporea">Cartelería Corpórea</button>
+              <button class="service-button" id="merchandising">Merchandising</button>
+              <button class="service-button" id="impresiones-3d">Impresiones 3D</button>
+              <button class="service-button" id="filmacion-dron">Filmación con Dron</button>
+              <button class="service-button" id="edicion-videos">Edición de Videos</button>
+              <button class="contact-button" id="contactame">Contactanos</button>
+            </div>`;
+        const buttonsElement = document.createElement('div');
+        buttonsElement.innerHTML = buttonsHtml;
+        chatbotBody.appendChild(buttonsElement);
+        chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
     } else if (messageLower.includes("adios") || messageLower.includes("hasta luego")) {
         response = responses.farewells[Math.floor(Math.random() * responses.farewells.length)];
     } else if (messageLower.includes("clima") || messageLower.includes("tiempo")) {
         response = responses.weather[Math.floor(Math.random() * responses.weather.length)];
     }
 
-    appendMessage("bot", response);
+    if (response !== responses.greetings[0] && response !== responses.greetings[1]) {
+        appendMessage("bot", response);
+    }
 }
+
