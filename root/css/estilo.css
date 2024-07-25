@@ -1093,7 +1093,8 @@
         }
 
         .whatsapp-button {
-            font-size: 24px;
+            font-size: 18px;
+        
             /* Reduce el tamaño de la fuente en pantallas más pequeñas */
             padding: 8px 16px;
             /* Ajusta el padding para que se vea mejor en pantallas más pequeñas */
@@ -1102,6 +1103,10 @@
         .whatsapp-button i {
             font-size: 16px;
             /* Ajusta el tamaño del ícono en pantallas más pequeñas */
+        }
+
+        .what {
+            font-size: 9px;
         }
 
         .thumbnail {
