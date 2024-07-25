@@ -20,7 +20,7 @@
     /* ENCABEZADO - MENU */
     /* *********** */
     h1 img {
-        margin-top: -15px;
+        margin-top: -10px;
         width: 150px; /* Ajusta este valor según el tamaño deseado */
         height: auto; /* Mantiene la proporción original de la imagen */
     }
