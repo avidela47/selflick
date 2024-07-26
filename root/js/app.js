@@ -104,12 +104,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// JavaScript para manejar el envío del formulario de contacto
+document.getElementById('contact-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const serviceID = 'service_06shzpe';
+    const templateID = 'template_fb6dc5b';
+
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            alert('Mensaje enviado con éxito!');
+            document.getElementById('contact-form').reset();
+        }, (err) => {
+            alert(JSON.stringify(err));
+        });
+});
+
 // JavaScript para mostrar/ocultar el chatbot según la posición del scroll
 document.addEventListener('DOMContentLoaded', () => {
     const footerSection = document.getElementById('footer');
     const chatbot = document.getElementById('chatbot');
 
-    window.addEventListener('scroll', () => {
+    const checkFooterVisibility = () => {
         const sectionPosition = footerSection.getBoundingClientRect();
         const isVisible = sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0;
 
@@ -128,105 +144,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1000,
             });
         }
-    });
-});
-
-// JavaScript para manejar el envío del formulario de contacto
-document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const serviceID = 'service_06shzpe';
-    const templateID = 'template_fb6dc5b';
-
-    emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-            alert('Mensaje enviado con éxito!');
-            document.getElementById('contact-form').reset();
-        }, (err) => {
-            alert(JSON.stringify(err));
-        });
-});
-
-// JavaScript para manejar el envío de mensajes del chatbot
-document.getElementById("submit-button").addEventListener("click", function () {
-    sendMessage();
-});
-
-document.getElementById("input-field").addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-        sendMessage();
-    }
-});
-
-// Función para enviar mensajes del chatbot
-function sendMessage() {
-    const inputField = document.getElementById("input-field");
-    const message = inputField.value.trim();
-
-    if (message !== "") {
-        appendMessage("user", message);
-        inputField.value = "";
-
-        // Simular la respuesta del bot
-        setTimeout(() => {
-            botResponse(message);
-        }, 500);
-    }
-}
-
-// Función para agregar mensajes al cuerpo del chatbot
-function appendMessage(sender, message) {
-    const chatbotBody = document.getElementById("chatbot-body");
-    const messageElement = document.createElement("p");
-    messageElement.className = sender === "user" ? "user-message" : "bot-message";
-    messageElement.innerText = message;
-    chatbotBody.appendChild(messageElement);
-    chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
-}
-
-// Función para generar la respuesta del bot
-function botResponse(userMessage) {
-    const responses = {
-        greetings: [
-            "¡Hola! Somos Selflick, Industria Gráfica. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿En qué te podemos ayudar? Aquí están nuestros servicios:",
-            "¡Hola! Soy el bot de Selflick. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿Qué servicio necesitas? Mira nuestras opciones:"
-        ],
-        farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
-        default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
-        weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
     };
 
-    let response = responses.default[Math.floor(Math.random() * responses.default.length)];
+    window.addEventListener('scroll', checkFooterVisibility);
 
-    const messageLower = userMessage.toLowerCase();
+    // Ocultar el chatbot inicialmente al cargar la página
+    chatbot.style.bottom = '-100%';
 
-    if (messageLower.includes("hola")) {
-        response = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
-        appendMessage("bot", response);
+    document.getElementById("submit-button").addEventListener("click", function () {
+        sendMessage();
+    });
 
-        // Mostrar los botones de servicio
+    document.getElementById("input-field").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        const inputField = document.getElementById("input-field");
+        const message = inputField.value.trim();
+
+        if (message !== "") {
+            appendMessage("user", message);
+            inputField.value = "";
+
+            // Simular la respuesta del bot
+            setTimeout(() => {
+                botResponse(message);
+            }, 500);
+        }
+    }
+
+    function appendMessage(sender, message) {
         const chatbotBody = document.getElementById("chatbot-body");
-        const buttonsHtml = `
-            <div class="service-buttons">
-              <button class="service-button" id="carteleria-corporea">Cartelería Corpórea</button>
-              <button class="service-button" id="merchandising">Merchandising</button>
-              <button class="service-button" id="impresiones-3d">Impresiones 3D</button>
-              <button class="service-button" id="filmacion-dron">Filmación con Dron</button>
-              <button class="service-button" id="edicion-videos">Edición de Videos</button>
-              <button class="contact-button" id="contactame">Contactanos</button>
-            </div>`;
-        const buttonsElement = document.createElement('div');
-        buttonsElement.innerHTML = buttonsHtml;
-        chatbotBody.appendChild(buttonsElement);
+        const messageElement = document.createElement("p");
+        messageElement.className = sender === "user" ? "user-message" : "bot-message";
+        messageElement.innerText = message;
+        chatbotBody.appendChild(messageElement);
         chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
-    } else if (messageLower.includes("adios") || messageLower.includes("hasta luego")) {
-        response = responses.farewells[Math.floor(Math.random() * responses.farewells.length)];
-    } else if (messageLower.includes("clima") || messageLower.includes("tiempo")) {
-        response = responses.weather[Math.floor(Math.random() * responses.weather.length)];
     }
 
-    if (response !== responses.greetings[0] && response !== responses.greetings[1]) {
-        appendMessage("bot", response);
+    function botResponse(userMessage) {
+        const responses = {
+            greetings: [
+                "¡Hola! Somos Selflick, Industria Gráfica. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿En qué te podemos ayudar? Aquí están nuestros servicios:",
+                "¡Hola! Soy el bot de Selflick. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿Qué servicio necesitas? Mira nuestras opciones:"
+            ],
+            farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
+            default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
+            weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
+        };
+
+        let response = responses.default[Math.floor(Math.random() * responses.default.length)];
+
+        const messageLower = userMessage.toLowerCase();
+
+        if (messageLower.includes("hola")) {
+            response = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
+            appendMessage("bot", response);
+
+            // Mostrar los botones de servicio
+            const chatbotBody = document.getElementById("chatbot-body");
+            const buttonsHtml = `
+                <div class="service-buttons">
+                  <button class="service-button" id="carteleria-corporea">Cartelería Corpórea</button>
+                  <button class="service-button" id="merchandising">Merchandising</button>
+                  <button class="service-button" id="impresiones-3d">Impresiones 3D</button>
+                  <button class="service-button" id="filmacion-dron">Filmación con Dron</button>
+                  <button class="service-button" id="edicion-videos">Edición de Videos</button>
+                  <button class="contact-button" id="contactame">Contactanos</button>
+                </div>`;
+            const buttonsElement = document.createElement('div');
+            buttonsElement.innerHTML = buttonsHtml;
+            chatbotBody.appendChild(buttonsElement);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
+        } else if (messageLower.includes("chau") || messageLower.includes("hasta luego")) {
+            response = responses.farewells[Math.floor(Math.random() * responses.farewells.length)];
+        } else if (messageLower.includes("clima") || messageLower.includes("tiempo")) {
+            response = responses.weather[Math.floor(Math.random() * responses.weather.length)];
+        }
+
+        if (response !== responses.greetings[0] && response !== responses.greetings[1]) {
+            appendMessage("bot", response);
+        }
     }
-}
+});
 
