@@ -11,7 +11,7 @@ function mostrarOcultarMenu() {
     }
 }
 
-// Función que oculta el menú cuando se selecciona una opción
+// Función galeria de fotos
 function seleccionar() {
     document.getElementById("nav").classList = "";
     menuVisible = false;
@@ -120,6 +120,7 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
         });
 });
 
+// JavaScript para manejar el chatbot
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const chatbot = document.getElementById('chatbot');
@@ -261,13 +262,19 @@ document.addEventListener('DOMContentLoaded', () => {
                   <button class="service-button" id="merchandising">Merchandising</button>
                   <button class="service-button" id="impresiones-3d">Impresiones 3D</button>
                   <button class="service-button" id="filmacion-dron">Filmación con Dron</button>
-                  <button class="service-button" id="edicion-videos">Edición de Videos</button>
-                  <button class="contact-button" id="contactame">Contactanos</button>
+                  <button class="service-button" id="edicion-videos">Edición de Videos</button>                 
                 </div>`;
             const buttonsElement = document.createElement('div');
             buttonsElement.innerHTML = buttonsHtml;
             chatbotBody.appendChild(buttonsElement);
             chatbotBody.scrollTop = chatbotBody.scrollHeight; // Desplazar hacia abajo
+
+            // Agregar event listeners a los botones
+            document.getElementById("carteleria-corporea").addEventListener("click", () => redirectToWhatsApp("Cartelería Corpórea"));
+            document.getElementById("merchandising").addEventListener("click", () => redirectToWhatsApp("Merchandising"));
+            document.getElementById("impresiones-3d").addEventListener("click", () => redirectToWhatsApp("Impresiones 3D"));
+            document.getElementById("filmacion-dron").addEventListener("click", () => redirectToWhatsApp("Filmación con Dron"));
+            document.getElementById("edicion-videos").addEventListener("click", () => redirectToWhatsApp("Edición de Videos"));
         } else if (messageLower.includes("chau") || messageLower.includes("hasta luego")) {
             response = responses.farewells[Math.floor(Math.random() * responses.farewells.length)];
         } else if (messageLower.includes("clima") || messageLower.includes("tiempo")) {
@@ -279,9 +286,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function redirectToWhatsApp(service) {
+        const phoneNumber = "3512450310";
+        const message = `Hola, estoy interesado en su servicio de ${service}.`;
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
     // Inicializar la verificación de visibilidad
     checkSectionVisibility();
 });
+
 
 
 
