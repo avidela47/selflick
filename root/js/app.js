@@ -120,49 +120,97 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
         });
 });
 
-// JavaScript para mostrar/ocultar el chatbot según la posición del scroll
 document.addEventListener('DOMContentLoaded', () => {
-    const footerSection = document.getElementById('footer');
+    const sections = document.querySelectorAll('section');
     const chatbot = document.getElementById('chatbot');
+    const inputField = document.getElementById("input-field");
+    let chatbotActive = false;
+    let scrollTimeout;
+    let showTimeout;
 
-    const checkFooterVisibility = () => {
-        const sectionPosition = footerSection.getBoundingClientRect();
-        const isVisible = sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0;
+    // Función para mostrar el chatbot
+    const showChatbot = () => {
+        anime({
+            targets: '#chatbot',
+            bottom: '20px',
+            easing: 'easeOutExpo',
+            duration: 1000,
+        });
+    };
 
-        if (isVisible) {
-            anime({
-                targets: '#chatbot',
-                bottom: '20px',
-                easing: 'easeOutExpo',
-                duration: 1000,
-            });
-        } else {
-            anime({
-                targets: '#chatbot',
-                bottom: '-100%',
-                easing: 'easeOutExpo',
-                duration: 1000,
-            });
+    // Función para ocultar el chatbot
+    const hideChatbot = () => {
+        anime({
+            targets: '#chatbot',
+            bottom: '-100%',
+            easing: 'easeOutExpo',
+            duration: 1000,
+        });
+    };
+
+    // Mostrar el chatbot 15 segundos después de cargar la página
+    setTimeout(showChatbot, 15000);
+
+    // Función para verificar la visibilidad de las secciones
+    const checkSectionVisibility = () => {
+        if (document.activeElement === inputField) {
+            showChatbot();
+            return;
+        }
+
+        let sectionVisible = false;
+
+        sections.forEach(section => {
+            const sectionPosition = section.getBoundingClientRect();
+            if (sectionPosition.top < window.innerHeight && sectionPosition.bottom >= 0) {
+                sectionVisible = true;
+            }
+        });
+
+        if (!sectionVisible && !chatbotActive) {
+            hideChatbot();
         }
     };
 
-    window.addEventListener('scroll', checkFooterVisibility);
+    // Listener para el scroll
+    window.addEventListener('scroll', () => {
+        if (!chatbotActive) {
+            hideChatbot();
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(checkSectionVisibility, 100);
+            clearTimeout(showTimeout);
+            showTimeout = setTimeout(showChatbot, 15000);
+        }
+    });
 
-    // Ocultar el chatbot inicialmente al cargar la página
-    chatbot.style.bottom = '-100%';
+    // Mantener el chatbot visible cuando el input tiene foco
+    inputField.addEventListener('focus', () => {
+        chatbotActive = true;
+        showChatbot();
+        clearTimeout(showTimeout);
+    });
+
+    inputField.addEventListener('blur', () => {
+        chatbotActive = false;
+        clearTimeout(showTimeout);
+        showTimeout = setTimeout(showChatbot, 15000);
+    });
 
     document.getElementById("submit-button").addEventListener("click", function () {
         sendMessage();
+        chatbotActive = true;
+        showChatbot();
     });
 
-    document.getElementById("input-field").addEventListener("keypress", function (event) {
+    inputField.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             sendMessage();
+            chatbotActive = true;
+            showChatbot();
         }
     });
 
     function sendMessage() {
-        const inputField = document.getElementById("input-field");
         const message = inputField.value.trim();
 
         if (message !== "") {
@@ -172,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Simular la respuesta del bot
             setTimeout(() => {
                 botResponse(message);
+                chatbotActive = true;
             }, 500);
         }
     }
@@ -191,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "¡Hola! Somos Selflick, Industria Gráfica. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿En qué te podemos ayudar? Aquí están nuestros servicios:",
                 "¡Hola! Soy el bot de Selflick. Atendemos de lunes a viernes de 9 hs a 17 hs. ¿Qué servicio necesitas? Mira nuestras opciones:"
             ],
-            farewells: ["¡Hasta luego! Que tengas un buen día.", "Adiós. ¡Cuídate!", "¡Nos vemos!"],
+            farewells: ["¡Hasta luego! Que tengas un buen día."],
             default: ["No estoy seguro de cómo responder a eso.", "¿Podrías reformular tu pregunta?", "No entiendo bien, ¿puedes intentar de nuevo?"],
             weather: ["El clima hoy es soleado.", "Parece que va a llover más tarde.", "Hace un poco de frío hoy."]
         };
@@ -229,5 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage("bot", response);
         }
     }
+
+    // Inicializar la verificación de visibilidad
+    checkSectionVisibility();
 });
+
+
 
