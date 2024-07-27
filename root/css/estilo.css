@@ -1252,32 +1252,6 @@
             font-size: 9px;
         }
 
-        .thumbnail {
-            justify-content: start;
-            bottom: 100px;
-        }
-
-        .slider .list .item .content h2 {
-            font-size: 60px;
-        }
-
-        .arrows {
-            top: 10%;
-        }
-
-        .zoom-modal-content {
-            width: 90%;
-            max-width: 90%;
-            margin-top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .zoom-close {
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-        }
-
         .marca {
             font-size: 50px !important;
         }
@@ -1302,10 +1276,53 @@
             margin-top: 100px;
         }
 
-        .slider .list .item .content{
-            padding-right: 0;
+        .slider {
+            height: 60vh; /* Reduce height for smaller screens */
+            width: 100vw; /* Set width to full viewport width */
+            margin-top: 0;
         }
-        .slider .list .item .content .title{
-            font-size: 50px;
-        }    
+    
+        .slider .list .item .content {
+            top: 15%;
+            width: 90%;
+            padding-right: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center; /* Center text content */
+        }
+    
+        .slider .list .item .content .title,
+        .slider .list .item .content .type {
+            font-size: 3em; /* Adjust font size */
+        }
+    
+        .slider .list .item .button {
+            grid-template-columns: 1fr; /* Stack buttons vertically */
+            grid-template-rows: auto;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    
+        .thumbnail {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+        }
+    
+        .thumbnail .item {
+            width: 100px;
+            height: 150px;
+        }
+    
+        .nextPrevArrows {
+            top: 70%;
+            right: 50%;
+            width: 200px;
+            transform: translateX(50%);
+        }
+    
+        .nextPrevArrows button {
+            width: 30px;
+            height: 30px;
+        }        
     }
