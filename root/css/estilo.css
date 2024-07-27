@@ -413,11 +413,10 @@
 .slider{
     height: 90vh;
     margin-top: -20px;
-    width: 180vh;
+    width: 190vh;
     overflow: hidden;
     position: relative;
     border-radius: 2%;
-    border: solid 1px greenyellow;
 }
 .slider .list .item{
     width: 100%;
@@ -1279,7 +1278,7 @@
 
         .slider {
             height: 60vh; /* Reduce height for smaller screens */
-            width: 100vw; /* Set width to full viewport width */
+            width: 90vw; /* Set width to full viewport width */
             margin-top: 0;
         }
     
