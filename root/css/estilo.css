@@ -5,7 +5,7 @@
     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;        
+        box-sizing: border-box;
     }
 
     html {
@@ -21,10 +21,12 @@
     /* *********** */
     h1 img {
         margin-top: -10px;
-        width: 150px; /* Ajusta este valor según el tamaño deseado */
-        height: auto; /* Mantiene la proporción original de la imagen */
+        width: 150px;
+        /* Ajusta este valor según el tamaño deseado */
+        height: auto;
+        /* Mantiene la proporción original de la imagen */
     }
-    
+
     .contenedor-header {
         width: 100%;
         position: fixed;
@@ -41,10 +43,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding:  0;
+        padding: 0;
         color: #fff;
         font-family: 'Barlow';
-       
+
     }
 
     .txtRojo {
@@ -491,6 +493,16 @@
         font-size: 20px;
     }
 
+    .logoequipo {
+        width: 15%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .puesto {
+        font-size: 20px;
+    }
+
     /* *********** */
     /* CONTACTO */
     /* *********** */
@@ -662,192 +674,88 @@
     }
 
     /* css slider */
-    .slider {
-        height: 100vh;
-        margin-top: -50px;
+
+    .container {
         position: relative;
-    }
-
-    .slider .list .item {
-        position: absolute;
-        inset: 0 0 0 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: .5s;
-    }
-
-    .slider .list .item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .slider .list .item::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-image: linear-gradient(to top, #000 40%, transparent);
-    }
-
-    .slider .list .item .content {
-        position: absolute;
-        left: 10%;
-        top: 20%;
-        width: 500px;
-        max-width: 80%;
-        z-index: 1;
-    }
-
-    .slider .list .item .content p:nth-child(1) {
-        text-transform: uppercase;
-        letter-spacing: 10px;
-    }
-
-    .slider .list .item .content h2 {
-        font-size: 100px;
-        margin: 0;
-    }
-
-    .slider .list .item.active {
-        opacity: 1;
-        z-index: 10;
-    }
-
-    @keyframes showContent {
-        to {
-            transform: translateY(0);
-            filter: blur(0);
-            opacity: 1;
-        }
-    }
-
-    .slider .list .item.active p:nth-child(1),
-    .slider .list .item.active h2,
-    .slider .list .item.active p:nth-child(3) {
-        transform: translateY(30px);
-        filter: blur(20px);
-        opacity: 0;
-        animation: showContent .5s .7s ease-in-out 1 forwards;
-    }
-
-    .slider .list .item.active h2 {
-        animation-delay: 1s;
-    }
-
-    .slider .list .item.active p:nth-child(3) {
-        animation-duration: 1.3s;
-    }
-
-    .arrows {
-        position: absolute;
-        top: 30%;
-        right: 50px;
-        z-index: 100;
-    }
-
-    .arrows button {
-        background-color: #eee5;
-        border: none;
-        font-family: monospace;
-        width: 40px;
-        height: 40px;
-        border-radius: 5px;
-        font-size: x-large;
-        color: #eee;
-        transition: .5s;
-    }
-
-    .arrows button:hover {
-        background-color: #eee;
-        color: black;
-    }
-
-    .thumbnail {
-        position: absolute;
-        bottom: 10px;
-        z-index: 11;
-        display: flex;
-        gap: 10px;
-        width: 100%;
-        height: 250px;
-        padding: 0 50px;
-        box-sizing: border-box;
-        overflow: auto;
-        justify-content: center;
-    }
-
-    .thumbnail::-webkit-scrollbar {
-        width: 0;
-    }
-
-    .thumbnail .item {
-        width: 150px;
-        height: 220px;
-        filter: brightness(.5);
-        transition: .5s;
-        flex-shrink: 0;
-    }
-
-    .thumbnail .item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-
-    .thumbnail .item.active {
-        filter: brightness(1.5);
-    }
-
-    .thumbnail .item .content {
-        position: absolute;
-        inset: auto 10px 10px 10px;
-    }
-
-    /* Styles for zoom modal */
-    .zoom-modal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .zoom-modal-content {
         margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 605px;
+        width: 100%;
+        max-width: 1000px;
+        height: 600px;
+        background: #f5f5f5;
+        box-shadow: 0 30px 50px #dbdbdb;
+        overflow: hidden;
     }
 
-    .zoom-close {
+    .container .slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .container .slide .item {
+        min-width: 200px;
+        height: 300px;
+        flex: 1;
+        border-radius: 20px;
+        box-shadow: 0 30px 50px #505050;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+        transition: 0.5s;
+    }
+
+    .item .content {
         position: absolute;
-        top: 15px;
-        right: 35px;
+        bottom: 20px;
+        left: 20px;
         color: #fff;
-        font-size: 40px;
+        font-family: system-ui;
+    }
+
+    .content .name {
+        font-size: 24px;
+        text-transform: uppercase;
         font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .content .des {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .content button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .button5 {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    .button5 button {
+        width: 40px;
+        height: 35px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        margin: 0 5px;
+        border: 1px solid #000;
         transition: 0.3s;
     }
 
-    .zoom-close:hover,
-    .zoom-close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
+    .button button:hover {
+        background: #ababab;
+        color: #fff;
     }
 
-    .zoomable {
-        cursor: zoom-in;
-    }
-
+    /* chatbot */
     .chatbot {
         width: 250px;
         border: 1px solid #ccc;
@@ -856,7 +764,7 @@
         bottom: 20px;
         right: 20px;
         background-color: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         color: #000;
@@ -959,47 +867,64 @@
         width: 30%;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-      }
+    }
 
     /* Estilo para los botones de servicio */
-.service-buttons {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
+    .service-buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
 
-.service-button {
-  background-color: #007BFF; /* Color de fondo */
-  border: none;
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; /* Tamaño de la fuente */
-  margin: 5px;
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-}
+    .service-button {
+        background-color: #007BFF;
+        /* Color de fondo */
+        border: none;
+        color: white;
+        /* Color del texto */
+        padding: 10px 20px;
+        /* Espaciado interno */
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        /* Tamaño de la fuente */
+        margin: 5px;
+        border-radius: 5px;
+        /* Bordes redondeados */
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre el botón */
+    }
 
-.service-button:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el cursor */
-}
+    .service-button:hover {
+        background-color: #0056b3;
+        /* Color de fondo al pasar el cursor */
+    }
 
-#carteleria-corporea, #merchandising, #impresiones-3d, #filmacion-dron, #edicion-videos, #contactame {
-    background-color: transparent;
-    color: gray;
-    font-size: 12px;
-    border: solid 1px black;
-    margin: 5px;
-    display: block;
+    #carteleria-corporea,
+    #merchandising,
+    #impresiones-3d,
+    #filmacion-dron,
+    #edicion-videos,
+    #contactame {
+        background-color: transparent;
+        color: gray;
+        font-size: 12px;
+        border: solid 1px black;
+        margin: 5px;
+        display: block;
 
-}
+    }
 
-#carteleria-corporea:hover, #merchandising:hover, #impresiones-3d:hover, #filmacion-dron:hover, #edicion-videos:hover, #contactame:hover {
-    background-color: #ff0000;
-    color: white;
-}
+    #carteleria-corporea:hover,
+    #merchandising:hover,
+    #impresiones-3d:hover,
+    #filmacion-dron:hover,
+    #edicion-videos:hover,
+    #contactame:hover {
+        background-color: #ff0000;
+        color: white;
+    }
 
 
     /* *********** */
@@ -1137,7 +1062,7 @@
 
         .whatsapp-button {
             font-size: 18px;
-        
+
             /* Reduce el tamaño de la fuente en pantallas más pequeñas */
             padding: 8px 16px;
             /* Ajusta el padding para que se vea mejor en pantallas más pequeñas */
@@ -1177,24 +1102,28 @@
             right: 20px;
             font-size: 30px;
         }
+
         .marca {
             font-size: 50px !important;
-         }
+        }
+
         .contenedor-header header {
             max-width: 900px;
         }
+
         .servicios .fila .col .contenedor-titulo .info h2 {
             font-size: 2.3rem;
         }
+
         .nosotros .fila .col .contenedor-titulo .info h2 {
             font-size: 2.3rem;
         }
+
         .contacto .contenedor-titulo .info h2 {
             font-size: 2.3rem;
         }
+
         .servicios {
             margin-top: 100px;
         }
     }
-
-    

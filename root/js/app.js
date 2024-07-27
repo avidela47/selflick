@@ -12,96 +12,17 @@ function mostrarOcultarMenu() {
 }
 
 // Función galeria de fotos
-function seleccionar() {
-    document.getElementById("nav").classList = "";
-    menuVisible = false;
-}
+let next = document.querySelector('.next');
+let prev = document.querySelector('.prev');
 
-let items = document.querySelectorAll('.slider .list .item');
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let thumbnails = document.querySelectorAll('.thumbnail .item');
+next.addEventListener('click', function () {
+    let items = document.querySelectorAll('.item');
+    document.querySelector('.slide').appendChild(items[0]);
+});
 
-// Parámetros de configuración
-let countItem = items.length;
-let itemActive = 0;
-
-// Evento para el clic en el botón "siguiente"
-next.onclick = function () {
-    itemActive = itemActive + 1;
-    if (itemActive >= countItem) {
-        itemActive = 0;
-    }
-    showSlider();
-}
-
-// Evento para el clic en el botón "anterior"
-prev.onclick = function () {
-    itemActive = itemActive - 1;
-    if (itemActive < 0) {
-        itemActive = countItem - 1;
-    }
-    showSlider();
-}
-
-// Ejecución automática del slider cada 5 segundos
-let refreshInterval = setInterval(() => {
-    next.click();
-}, 5000)
-
-// Función para mostrar el slider
-function showSlider() {
-    // Eliminar la clase "active" del elemento anterior
-    let itemActiveOld = document.querySelector('.slider .list .item.active');
-    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
-    itemActiveOld.classList.remove('active');
-    thumbnailActiveOld.classList.remove('active');
-
-    // Agregar la clase "active" al nuevo elemento
-    items[itemActive].classList.add('active');
-    thumbnails[itemActive].classList.add('active');
-
-    // Reiniciar el intervalo de tiempo automático del slider
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => {
-        next.click();
-    }, 5000)
-}
-
-// Evento para el clic en las miniaturas
-thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener('click', () => {
-        itemActive = index;
-        showSlider();
-    })
-})
-
-// JavaScript para la funcionalidad de zoom
-document.addEventListener('DOMContentLoaded', () => {
-    const zoomables = document.querySelectorAll('.zoomable');
-    const zoomModal = document.getElementById('zoomModal');
-    const zoomedImg = document.getElementById('zoomedImg');
-    const zoomClose = document.getElementsByClassName('zoom-close')[0];
-
-    // Evento para el clic en una imagen zoomable
-    zoomables.forEach(img => {
-        img.addEventListener('click', function () {
-            zoomModal.style.display = 'block';
-            zoomedImg.src = this.src;
-        });
-    });
-
-    // Evento para cerrar el modal de zoom
-    zoomClose.addEventListener('click', function () {
-        zoomModal.style.display = 'none';
-    });
-
-    // Evento para cerrar el modal de zoom al hacer clic fuera de la imagen
-    zoomModal.addEventListener('click', function (event) {
-        if (event.target === zoomModal) {
-            zoomModal.style.display = 'none';
-        }
-    });
+prev.addEventListener('click', function () {
+    let items = document.querySelectorAll('.item');
+    document.querySelector('.slide').prepend(items[items.length - 1]);
 });
 
 // JavaScript para manejar el envío del formulario de contacto
