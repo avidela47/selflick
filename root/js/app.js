@@ -11,6 +11,12 @@ function mostrarOcultarMenu() {
     }
 }
 
+function seleccionar(){
+    //oculto el menu una vez que selecciono una opcion
+    document.getElementById("nav").classList = "";
+    menuVisible = false;
+}
+
 // Función galeria de fotos
 let nextBtn = document.querySelector('.next')
 let prevBtn = document.querySelector('.prev')
