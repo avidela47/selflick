@@ -33,7 +33,6 @@ prevBtn.onclick = function () {
     moveSlider('prev')
 }
 
-
 function moveSlider(direction) {
     let sliderItems = sliderList.querySelectorAll('.item')
     let thumbnailItems = document.querySelectorAll('.thumbnail .item')
