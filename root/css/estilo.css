@@ -26,79 +26,83 @@
     }
 
     /* *********** */
-    /* ENCABEZADO - MENU */
-    /* *********** */
-    h1 img {
-        margin-top: -10px;
-        width: 150px;
-        /* Ajusta este valor según el tamaño deseado */
-        height: auto;
-        /* Mantiene la proporción original de la imagen */
-    }
+   /* ENCABEZADO - MENU */
+/* *********** */
+h1 img {
+    margin-top: -10px;
+    width: 150px;
+    /* Ajusta este valor según el tamaño deseado */
+    height: auto;
+    /* Mantiene la proporción original de la imagen */
+}
 
-    .contenedor-header {
-        width: 100%;
-        position: fixed;
-        border-bottom: 1px solid #1f283e;
-        background-color: rgba(0, 0, 0, .7);
-        z-index: 99;
-        padding: 0 20px;
-    }
+.contenedor-header {
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid #1f283e;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 99;
+    padding: 0 20px;
+    overflow: hidden;
+    box-sizing: border-box; /* Añadido para asegurar que el padding no cause overflow */
+}
 
-    .contenedor-header header {
-        max-width: 1366px;
-        margin: auto;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-        color: #fff;
-        font-family: 'Barlow';
+.contenedor-header header {
+    max-width:100%;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    color: #fff;
+    font-family: 'Barlow';
+    overflow: hidden; /* Añadido para evitar overflow en elementos flex */
+}
 
-    }
+.txtRojo {
+    color: #ff0000;
+    font-family: 'Barlow';
+}
 
-    .txtRojo {
-        color: #ff0000;
-        font-family: 'Barlow'
-    }
+.txtRojo3 {
+    color: #ff0000;
+    font-family: 'Barlow', sans-serif;
+}
 
-    .txtRojo3 {
-        color: #ff0000;
-        font-family: 'Barlow', sans-serif;
-    }
+.titulo {
+    font-size: 60px;
+}
 
-    .titulo {
-        font-size: 60px;
-    }
+.contenedor-header header nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
+    box-sizing: border-box; /* Añadido para asegurar que el padding no cause overflow */
+}
 
-    .contenedor-header header nav a {
-        display: inline-block;
-        text-decoration: none;
-        color: #fff;
-        padding: 5px;
-        text-transform: uppercase;
-    }
+.contenedor-header header nav a:hover {
+    color: #ff0000;
+}
 
-    .contenedor-header header nav a:hover {
-        color: #ff0000;
-    }
+.contenedor-header header .redes a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 8px;
+    box-sizing: border-box; /* Añadido para asegurar que el padding no cause overflow */
+}
 
-    .contenedor-header header .redes a {
-        text-decoration: none;
-        color: #fff;
-        display: inline-block;
-        padding: 5px 8px;
-    }
+.contenedor-header header .redes a:hover {
+    color: #ff0000;
+}
 
-    .contenedor-header header .redes a:hover {
-        color: #ff0000;
-    }
-
-    .nav-responsive {
-        display: none;
-        font-size: 25px;
-    }
+.nav-responsive {
+    display: none;
+    font-size: 25px;
+}
 
     /* *********** */
     /* SECCIÓN INICIO */
