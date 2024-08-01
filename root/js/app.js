@@ -256,6 +256,47 @@ document.addEventListener('DOMContentLoaded', () => {
     checkSectionVisibility();
 });
 
+ // Inicializar VIDEOS
 
+const videoPlaylist = document.querySelector(".video-playlist");
+const video = document.getElementById("video");
+const playIcon = document.getElementById("play");
 
+playIcon.classList.add("active");
 
+const play = (videoSource) => {
+  video.src = videoSource;
+  video.play();
+  playIcon.classList.remove("active");
+};
+
+video.onpause = () => playIcon.classList.add("active");
+
+const clear = () => {
+  videoPlaylist.childNodes.forEach((liTag) => {
+    liTag.classList.remove("now");
+  });
+};
+
+for (let index = 1; index <= 10; index++) {
+  let liTag = document.createElement("li");
+  liTag.classList.add("video");
+  liTag.onclick = () => {
+    clear();
+    liTag.classList.add("now");
+    play(`./root/img/video-${index}.mp4`);
+  };
+
+  liTag.innerHTML = `
+    <div class="video-img">
+      <i class="fa-regular fa-circle-play icon icon-small active"></i>
+      <video src="./root/img/video-${index}.mp4"></video>
+    </div>
+    <div class="video-details">
+      <h4>Video titulo...</h4>
+      <p>Video description...</p>
+    </div>
+  `;
+
+  videoPlaylist.appendChild(liTag);
+}
