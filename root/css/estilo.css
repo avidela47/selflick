@@ -1314,7 +1314,11 @@
     @media only screen and (max-width: 900px) {
 
         body {
-            overflow-x: visible;
+            overflow-x: hidden;
+        }
+
+        header {
+            flex-wrap: wrap;
         }
 
         header nav {
