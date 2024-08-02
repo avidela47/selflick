@@ -33,9 +33,7 @@
     h1 img {
         margin-top: -10px;
         width: 150px;
-        /* Ajusta este valor según el tamaño deseado */
         height: auto;
-        /* Mantiene la proporción original de la imagen */
     }
 
     .contenedor-header {
@@ -45,23 +43,16 @@
         background-color: rgba(0, 0, 0, .7);
         z-index: 99;
         padding: 0 20px;
-        overflow: hidden;
-        box-sizing: border-box;
-        /* Añadido para asegurar que el padding no cause overflow */
     }
 
     .contenedor-header header {
         max-width: 100%;
         margin: auto;
-        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0;
         color: #fff;
         font-family: 'Barlow';
-        overflow: hidden;
-        /* Añadido para evitar overflow en elementos flex */
     }
 
     .txtRojo {
@@ -84,8 +75,6 @@
         color: #fff;
         padding: 5px;
         text-transform: uppercase;
-        box-sizing: border-box;
-        /* Añadido para asegurar que el padding no cause overflow */
     }
 
     .contenedor-header header nav a:hover {
@@ -97,8 +86,6 @@
         color: #fff;
         display: inline-block;
         padding: 5px 8px;
-        box-sizing: border-box;
-        /* Añadido para asegurar que el padding no cause overflow */
     }
 
     .contenedor-header header .redes a:hover {
@@ -1315,12 +1302,15 @@
 
         body {
             overflow-x: hidden;
+            box-sizing: border-box;
         }
 
         header nav {
             position: initial;
             display: none;
+            width: 100%;
             transform: translate(0);
+            box-sizing: border-box;
         }
 
         header .redes {
@@ -1366,11 +1356,23 @@
         }
         
         .opciones {
-            margin-top: 20px;
+            margin-bottom: 100px;
+            overflow-x: hidden;
+            font-size: 12px;
+            display: inline-block;
         }
         
         .opcion {
             margin: 5px 0;
+        }
+
+        .contenedor-header {
+            position: relative;
+        }
+
+        .titulo {
+            font-size: 20px;
+            margin-top: -300px;
         }
 
         .nosotros .fila {
