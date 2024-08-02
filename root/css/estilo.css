@@ -1313,14 +1313,6 @@
     /* *********** */
     @media only screen and (max-width: 900px) {
 
-        body {
-            overflow-x: hidden;
-        }
-
-        header {
-            flex-wrap: wrap;
-        }
-
         header nav {
             position: initial;
             display: none;
@@ -1331,48 +1323,44 @@
             display: none;
         }
 
-        nav {
-            display: none;
-            flex-direction: column;
-            background-color: #151623;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            z-index: 99;
+        .nav.responsive {
+            display: block;
         }
 
         nav.responsive {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #151623;
+            z-index: 99;
         }
 
-        nav a {
-            font-size: 20px;
-            margin: 10px 0;
-        }
-
-        .nav-responsive {
+        nav.responsive a {
             display: block;
-            cursor: pointer;
+            width: fit-content;
+            margin: 10px auto;
+            font-size: 30px;
         }
 
         .redes {
             display: none;
         }
-        
+
         section.inicio {
             padding: 20px;
             background-color: #f4f4f4;
             text-align: center;
         }
-        
+
         .opciones {
             margin-top: 20px;
         }
-        
+
         .opcion {
             margin: 5px 0;
         }
