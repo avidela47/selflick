@@ -2,18 +2,19 @@ let menuVisible = false;
 
 // Función que oculta o muestra el menú de navegación
 function mostrarOcultarMenu() {
+    const nav = document.getElementById("nav");
     if (menuVisible) {
-        document.getElementById("nav").classList = "";
+        nav.classList.remove("responsive");
         menuVisible = false;
     } else {
-        document.getElementById("nav").classList = "responsive";
+        nav.classList.add("responsive");
         menuVisible = true;
     }
 }
 
-function seleccionar(){
-    //oculto el menu una vez que selecciono una opcion
-    document.getElementById("nav").classList = "";
+function seleccionar() {
+    // Oculta el menú una vez que se selecciona una opción
+    document.getElementById("nav").classList.remove("responsive");
     menuVisible = false;
 }
 
