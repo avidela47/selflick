@@ -1313,6 +1313,9 @@
     /* *********** */
     @media only screen and (max-width: 900px) {
 
+        body{
+            overflow-x: visible;
+        }
         header nav {
             position: initial;
             display: none;
