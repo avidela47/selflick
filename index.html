@@ -60,6 +60,7 @@
         <a href="#contacto" onclick="seleccionar()">Contacto</a>
       </nav>
       <div class="redes">
+        <div id="visitCounter"></div>
         <a href="https://www.facebook.com/selflick" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.tiktok.com/@selflick.empresa" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         <a href="https://www.instagram.com/selflickempresa/" target="_blank"><i
@@ -389,7 +390,6 @@
           <button type="submit">Enviar Mensaje</button>
         </div>
       </form>
-
       <div class="fila-datos">
         <div class="col">
           <i class="fa-solid fa-location-dot"></i>
@@ -403,22 +403,23 @@
           <i class="fa-regular fa-clock"></i>
           Lunes a Viernes, 9:00hs - 17:00hs
         </div>
-        <div id="chatbot" class="chatbot">
-          <div class="chatbot-header">
-            <img src="./root/img/bot.png" alt="Robot Chatbot" class="robot-image">
-            <h3 class="bot"><img src="./root/img/logofinal.svg" alt="" /></h3>
-          </div>
-          <div class="chatbot-body" id="chatbot-body">
-            <p class="chtb">Hola, ¿cómo puedo ayudarte?</p>
-          </div>
-          <div id="input-form">
-            <input id="input-field" type="text" placeholder="Escribe un mensaje...">
-            <button id="submit-button">
-              <i class="fa fa-paper-plane send-icon"></i>
-            </button>
-          </div>
+      </div>
+      <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+          <img src="./root/img/bot.png" alt="Robot Chatbot" class="robot-image">
+          <h3 class="bot"><img src="./root/img/logofinal.svg" alt="" /></h3>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+          <p class="chtb">Hola, ¿cómo puedo ayudarte?</p>
+        </div>
+        <div id="input-form">
+          <input id="input-field" type="text" placeholder="Escribe un mensaje...">
+          <button id="submit-button">
+            <i class="fa fa-paper-plane send-icon"></i>
+          </button>
         </div>
       </div>
+    </div>
   </section>
 
   <footer id="footer">

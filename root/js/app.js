@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkSectionVisibility();
 });
 
- // Inicializar VIDEOS
+// Inicializar VIDEOS
 
 const videoPlaylist = document.querySelector(".video-playlist");
 const video = document.getElementById("video");
@@ -266,29 +266,29 @@ const playIcon = document.getElementById("play");
 playIcon.classList.add("active");
 
 const play = (videoSource) => {
-  video.src = videoSource;
-  video.play();
-  playIcon.classList.remove("active");
+    video.src = videoSource;
+    video.play();
+    playIcon.classList.remove("active");
 };
 
 video.onpause = () => playIcon.classList.add("active");
 
 const clear = () => {
-  videoPlaylist.childNodes.forEach((liTag) => {
-    liTag.classList.remove("now");
-  });
+    videoPlaylist.childNodes.forEach((liTag) => {
+        liTag.classList.remove("now");
+    });
 };
 
 for (let index = 1; index <= 10; index++) {
-  let liTag = document.createElement("li");
-  liTag.classList.add("video");
-  liTag.onclick = () => {
-    clear();
-    liTag.classList.add("now");
-    play(`./root/img/video-${index}.mp4`);
-  };
+    let liTag = document.createElement("li");
+    liTag.classList.add("video");
+    liTag.onclick = () => {
+        clear();
+        liTag.classList.add("now");
+        play(`./root/img/video-${index}.mp4`);
+    };
 
-  liTag.innerHTML = `
+    liTag.innerHTML = `
     <div class="video-img">
       <i class="fa-regular fa-circle-play icon icon-small active"></i>
       <video src="./root/img/video-${index}.mp4"></video>
@@ -299,5 +299,25 @@ for (let index = 1; index <= 10; index++) {
     </div>
   `;
 
-  videoPlaylist.appendChild(liTag);
+    videoPlaylist.appendChild(liTag);
 }
+
+// Obtener el número de visitas almacenado en localStorage
+let visits = localStorage.getItem('visitCount');
+
+// Si no hay un número de visitas almacenado, inicializarlo a 5670
+if (visits === null) {
+    visits = 5670;
+} else {
+    // Si ya existe un número de visitas, convertirlo a número e incrementarlo en 1
+    visits = Number(visits) + 1;
+}
+
+// Almacenar el nuevo valor en localStorage
+localStorage.setItem('visitCount', visits);
+
+// Mostrar el número de visitas en la página
+document.addEventListener('DOMContentLoaded', (event) => {
+    const visitCounter = document.getElementById('visitCounter');
+    visitCounter.innerHTML = `Visitas al sitio: ${visits}`;
+});

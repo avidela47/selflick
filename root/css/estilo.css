@@ -1294,6 +1294,18 @@
         color: white;
     }
 
+    /* Estilo para el contador de visitas */
+    #visitCounter {
+        position: relative;
+        top: 10px;
+        right: 10px;
+        font-family: 'Barlow', sans-serif;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 13px;
+        text-align: center;
+    }
 
     /* *********** */
     /* RESPONSIVE */
@@ -1353,20 +1365,20 @@
         .redes {
             display: none;
         }
-        
+
         section.inicio {
             padding: 20px;
             background-color: #f4f4f4;
             text-align: center;
         }
-        
+
         .opciones {
             margin-bottom: 100px;
             overflow-x: hidden;
             font-size: 12px;
             display: inline-block;
         }
-        
+
         .opcion {
             margin: 5px 0;
         }
