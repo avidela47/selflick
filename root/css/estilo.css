@@ -1303,8 +1303,31 @@
         color: white;
         padding: 10px;
         border-radius: 5px;
-        font-size: 13px;
+        font-size: 11px;
         text-align: center;
+    }
+
+    /* Estilo específico para cada dígito de visitas */
+    #visitCounter .visits {
+        font-family: 'Courier New', Courier, monospace;
+        /* Cambia la fuente solo para los números */
+        font-weight:lighter;
+        color: white;
+        /* Color del texto */
+        background-color: #ff0000;
+        /* Fondo del cuadrado */
+        padding: 0;
+        /* Espacio alrededor del número */
+        border: 2px solid #ff0000;
+        /* Borde del cuadrado */
+        border-radius: 10%;
+        /* Bordes redondeados */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        /* Sombra para darle un efecto 3D */
+        display: inline-block;
+        /* Mantiene el cuadrado ajustado al contenido */
+        margin: 0 0.5px;
+        /* Espacio entre los cuadrados */
     }
 
     /* *********** */

@@ -319,5 +319,8 @@ localStorage.setItem('visitCount', visits);
 // Mostrar el número de visitas en la página
 document.addEventListener('DOMContentLoaded', (event) => {
     const visitCounter = document.getElementById('visitCounter');
-    visitCounter.innerHTML = `Visitas al sitio: ${visits}`;
+    let visitDigits = visits.toString().split('').map(digit => `<span class="visits">${digit}</span>`).join('');
+    visitCounter.innerHTML = `Visitas al sitio: ${visitDigits}`;
 });
+
+
