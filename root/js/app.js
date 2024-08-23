@@ -288,16 +288,16 @@ for (let index = 1; index <= 10; index++) {
         play(`./root/img/video-${index}.mp4`);
     };
 
-    liTag.innerHTML = `
-    <div class="video-img">
-      <i class="fa-regular fa-circle-play icon icon-small active"></i>
-      <video src="./root/img/video-${index}.mp4"></video>
-    </div>
-    <div class="video-details">
-      <h4>Video titulo...</h4>
-      <p>Video description...</p>
-    </div>
-  `;
+ //   liTag.innerHTML = `
+ //   <div class="video-img">
+ //     <i class="fa-regular fa-circle-play icon icon-small active"></i>
+ //     <video src="./root/img/video-${index}.mp3"></video>
+ //   </div>
+ //   <div class="video-details">
+ //     <h4>Video titulo...</h4>
+ //     <p>Video description...</p>
+ //   </div>
+ // `;
 
     videoPlaylist.appendChild(liTag);
 }
