@@ -279,14 +279,14 @@ const clear = () => {
     });
 };
 
-for (let index = 1; index <= 10; index++) {
-    let liTag = document.createElement("li");
-    liTag.classList.add("video");
-    liTag.onclick = () => {
-        clear();
-        liTag.classList.add("now");
-        play(`./root/img/video-${index}.mp4`);
-    };
+//for (let index = 1; index <= 10; index++) {
+ //   let liTag = document.createElement("li");
+ //   liTag.classList.add("video");
+ //   liTag.onclick = () => {
+ //       clear();
+ //       liTag.classList.add("now");
+ //       play(`./root/img/video-${index}.mp4`);
+ //   };
 
  //   liTag.innerHTML = `
  //   <div class="video-img">
@@ -299,8 +299,8 @@ for (let index = 1; index <= 10; index++) {
  //   </div>
  // `;
 
-    videoPlaylist.appendChild(liTag);
-}
+//    videoPlaylist.appendChild(liTag);
+// }
 
 // Obtener el número de visitas almacenado en localStorage
 let visits = localStorage.getItem('visitCount');
