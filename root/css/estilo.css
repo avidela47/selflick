@@ -684,6 +684,97 @@
         }
     }
 
+    /* Galería */
+    .galeria .slider .list .item img {
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        transition: 0.3s;
+    }
+
+    .galeria .slider .list .item img:hover {
+        opacity: 0.7;
+    }
+
+    /* Estilos del modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .modal-content,
+    #caption {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Estilos específicos para la imagen del modal */
+    #imgModal {
+        width: 1000px;
+        height: 500px;
+        object-fit: cover;
+        /* Asegura que la imagen se ajuste al contenedor sin distorsión */
+        margin: auto;
+        display: block;
+        border-radius: 10px;
+        /* Opcional: añade bordes redondeados */
+    }
+
     /* ********** */
     /* VIDEOS */
     /* ********** */
@@ -1311,7 +1402,7 @@
     #visitCounter .visits {
         font-family: 'Courier New', Courier, monospace;
         /* Cambia la fuente solo para los números */
-        font-weight:lighter;
+        font-weight: lighter;
         color: white;
         /* Color del texto */
         background-color: #ff0000;

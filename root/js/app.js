@@ -279,25 +279,26 @@ const clear = () => {
     });
 };
 
+// Cuando tengan videos nuevos propios se habilita
 //for (let index = 1; index <= 10; index++) {
- //   let liTag = document.createElement("li");
- //   liTag.classList.add("video");
- //   liTag.onclick = () => {
- //       clear();
- //       liTag.classList.add("now");
- //       play(`./root/img/video-${index}.mp4`);
- //   };
+//   let liTag = document.createElement("li");
+//   liTag.classList.add("video");
+//   liTag.onclick = () => {
+//       clear();
+//       liTag.classList.add("now");
+//       play(`./root/img/video-${index}.mp4`);
+//   };
 
- //   liTag.innerHTML = `
- //   <div class="video-img">
- //     <i class="fa-regular fa-circle-play icon icon-small active"></i>
- //     <video src="./root/img/video-${index}.mp3"></video>
- //   </div>
- //   <div class="video-details">
- //     <h4>Video titulo...</h4>
- //     <p>Video description...</p>
- //   </div>
- // `;
+//   liTag.innerHTML = `
+//   <div class="video-img">
+//     <i class="fa-regular fa-circle-play icon icon-small active"></i>
+//     <video src="./root/img/video-${index}.mp3"></video>
+//   </div>
+//   <div class="video-details">
+//     <h4>Video titulo...</h4>
+//     <p>Video description...</p>
+//   </div>
+// `;
 
 //    videoPlaylist.appendChild(liTag);
 // }
@@ -322,5 +323,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let visitDigits = visits.toString().split('').map(digit => `<span class="visits">${digit}</span>`).join('');
     visitCounter.innerHTML = `Visitas al sitio: ${visitDigits}`;
 });
+
+// Obtener el modal
+var modal = document.getElementById("myModal");
+
+// Obtener la imagen y el modal de la imagen
+var imgs = document.querySelectorAll('.galeria .slider .list .item img');
+var modalImg = document.getElementById("imgModal");
+var captionText = document.getElementById("caption");
+
+imgs.forEach(function (img) {
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    };
+});
+
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario haga clic en <span> (x), cerrar el modal
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+// Cerrar modal al hacer clic fuera de la imagen
+modal.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
 
 
