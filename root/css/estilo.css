@@ -765,7 +765,7 @@
 
     /* Estilos específicos para la imagen del modal */
     #imgModal {
-        width: 1000px;
+        max-width: 200%;
         height: 500px;
         object-fit: cover;
         /* Asegura que la imagen se ajuste al contenedor sin distorsión */
@@ -1754,5 +1754,34 @@
 
         .servicios .contenido-seccion {
             margin-top: 100px;
+        }
+
+        .galeria .slider .list .item img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .modal-content {
+            width: 90%;
+            max-width: 500px;
+        }
+    
+        #caption {
+            width: 90%;
+            max-width: 500px;
+            font-size: 14px; /* Reduce el tamaño del texto para pantallas pequeñas */
+        }
+    
+        .close {
+            top: 10px;
+            right: 20px;
+            font-size: 30px; /* Reduce el tamaño del botón de cierre */
+        }
+    
+        #imgModal {
+            width: 90%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px; /* Ajusta el borde redondeado para pantallas pequeñas */
         }
     }
