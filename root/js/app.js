@@ -355,5 +355,28 @@ modal.onclick = function (event) {
     }
 };
 
+// Obtener los elementos
+const modal2 = document.getElementById('modal2Pago');
+const mercadoPagoLogo = document.getElementById('mercadoPagoLogo');
+const span2 = document.getElementsByClassName('close2')[0];
+
+// Al hacer clic en el logo, mostrar el modal2
+mercadoPagoLogo.onclick = function () {
+    modal2.style.display = 'block';
+}
+
+// Al hacer clic en el span (x), cerrar el modal2
+span2.onclick = function () {
+    modal2.style.display = 'none';
+}
+
+// Cerrar el modal2 si el usuario hace clic fuera del modal2
+window.onclick = function (event) {
+    if (event.target === modal2) {
+        modal2.style.display = 'none';
+    }
+}
+
+
 
 

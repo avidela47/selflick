@@ -256,6 +256,113 @@
         cursor: pointer;
     }
 
+    .forma-pago {
+        font-family: 'Barlow', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    #mercadoPagoLogo {
+        margin-left: 40px;
+    }
+
+    /* General styles for modal */
+    .modal2 {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Black background with opacity */
+    }
+
+    .modal2-content {
+        background-image: url('/root/img/tarjeta.png');
+        /* Use the uploaded image as the background */
+        background-size: cover;
+        /* Make sure the image covers the entire content area */
+        background-position: center;
+        position: relative;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 15px;
+        /* Rounded corners to mimic the card shape */
+        width: 350px;
+        height: 220px;
+        /* Adjust based on the size of the card */
+        color: white;
+        /* White text for contrast */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .close2 {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Estilo y posicionamiento del chip */
+    .card-chip {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        width: 40px;
+        /* Ajusta el tamaño según sea necesario */
+    }
+
+    .card-chip img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Estilo y posicionamiento del logo */
+    .card-logo {
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        width: 50px;
+        /* Ajusta el tamaño según sea necesario */
+    }
+
+    .card-logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Estilo y posicionamiento del logo de Mercado Pago */
+    .card-logo-mercadopago {
+        position: absolute;
+        bottom: 70px;
+        /* Ajustado para estar justo encima del logo de Mastercard */
+        right: 20px;
+        width: 50px;
+        /* Ajusta el tamaño según sea necesario */
+    }
+
+    .card-logo-mercadopago img {
+        width: 200%;
+        height: 200%;
+        margin-left: -40px;
+    }
+
+    /* Estilos para los textos de la tarjeta */
+    .card-details {
+        margin-top: 35px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-details p {
+        font-size: 14px;
+    }
+
     /* ********** */
     /* SERVICIOS */
     /* ********** */
@@ -1760,28 +1867,86 @@
             width: 100%;
             height: auto;
         }
-    
+
         .modal-content {
             width: 90%;
             max-width: 500px;
         }
-    
+
         #caption {
             width: 90%;
             max-width: 500px;
-            font-size: 14px; /* Reduce el tamaño del texto para pantallas pequeñas */
+            font-size: 14px;
+            /* Reduce el tamaño del texto para pantallas pequeñas */
         }
-    
+
         .close {
             top: 10px;
             right: 20px;
-            font-size: 30px; /* Reduce el tamaño del botón de cierre */
+            font-size: 30px;
+            /* Reduce el tamaño del botón de cierre */
         }
-    
+
         #imgModal {
             width: 90%;
             height: auto;
             object-fit: contain;
-            border-radius: 8px; /* Ajusta el borde redondeado para pantallas pequeñas */
+            border-radius: 8px;
+            /* Ajusta el borde redondeado para pantallas pequeñas */
+        }
+
+        /* Ajuste del tamaño del modal */
+        .modal2-content {
+            width: 300px;
+            /* Reduce el ancho de la tarjeta */
+            height: 190px;
+            /* Ajusta la altura acorde al nuevo ancho */
+            padding: 15px;
+            /* Reduce el padding */
+        }
+
+        /* Ajuste del botón de cerrar */
+        .close2 {
+            font-size: 24px;
+            /* Reduce el tamaño de la X para cerrar */
+            top: 5px;
+            /* Ajuste de la posición superior */
+            right: 15px;
+            /* Ajuste de la posición derecha */
+        }
+
+        /* Ajuste del chip */
+        .card-chip {
+            width: 30px;
+            /* Reduce el tamaño del chip */
+        }
+
+        /* Ajuste del logo */
+        .card-logo {
+            width: 40px;
+            /* Reduce el tamaño del logo de Mastercard */
+        }
+
+        /* Ajuste del logo de Mercado Pago */
+        .card-logo-mercadopago {
+            bottom: 60px;
+            /* Ajuste para mantener el espacio entre los logos */
+            right: 15px;
+            /* Reduce el margen lateral */
+            width: 45px;
+            /* Ajusta el tamaño del logo de Mercado Pago */
+        }
+
+        .card-logo-mercadopago img {
+            width: 180%;
+            height: 180%;
+            margin-left: -35px;
+            /* Ajuste de la posición */
+        }
+
+        /* Ajuste del tamaño de texto */
+        .card-details p {
+            font-size: 12px;
+            /* Reduce el tamaño de la fuente */
         }
     }
