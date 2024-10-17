@@ -1628,6 +1628,97 @@
             margin: auto;
         }
 
+        .fila-nosotros {
+            display: block;
+            text-align: center;
+        }
+
+        .col1 {
+            margin-bottom: 20px;
+            font-size: 10px;
+            
+        }
+    
+        /* Ajuste para la frase y título de la sección */
+        .col1 .frase {
+            font-size: 5px;
+        }
+    
+        .col1 h3 {
+            font-size: 10px;
+        }
+    
+        /* Ajuste de la forma de pago */
+        .forma-pago {
+            margin-top: -20px;
+            text-align: center;
+        }
+    
+        .forma-pago h3 {
+            font-size: 14px;
+        }
+    
+        /* Ajuste del logo de Mercado Pago */
+        #mercadoPagoLogo {
+            width: 80px;
+            margin-left: 0;
+        }
+
+        /* Ajuste del enlace de WhatsApp */
+    .cel {
+        margin-top: -30px;
+    }
+
+    .whatsapp-button {
+        font-size: 16px;
+    }
+
+    .what {
+        font-size: 10px;
+    }
+
+    /* Ajuste del modal de pago */
+    .modal2-content {
+        width: 300px;
+        height: 190px;
+        padding: 15px;
+    }
+
+    /* Ajuste del botón de cerrar */
+    .close2 {
+        font-size: 24px;
+        top: 5px;
+        right: 15px;
+    }
+
+    /* Ajuste del chip */
+    .card-chip {
+        width: 30px;
+    }
+
+    /* Ajuste del logo de Mastercard */
+    .card-logo {
+        width: 40px;
+    }
+
+    /* Ajuste del logo de Mercado Pago */
+    .card-logo-mercadopago {
+        bottom: 60px;
+        right: 15px;
+        width: 45px;
+    }
+
+    .card-logo-mercadopago img {
+        width: 180%;
+        height: 180%;
+        margin-left: -35px;
+    }
+
+    /* Ajuste del texto en la tarjeta */
+    .card-details p {
+        font-size: 12px;
+    }
+
         td {
             display: inline-table;
             margin-bottom: 10px;
@@ -1701,23 +1792,6 @@
 
         footer .info p {
             margin-bottom: 10px;
-        }
-
-        .whatsapp-button {
-            font-size: 18px;
-
-            /* Reduce el tamaño de la fuente en pantallas más pequeñas */
-            padding: 8px 16px;
-            /* Ajusta el padding para que se vea mejor en pantallas más pequeñas */
-        }
-
-        .whatsapp-button i {
-            font-size: 16px;
-            /* Ajusta el tamaño del ícono en pantallas más pequeñas */
-        }
-
-        .what {
-            font-size: 9px;
         }
 
         .marca {
