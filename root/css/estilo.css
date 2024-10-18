@@ -294,7 +294,8 @@
         width: 350px;
         height: 220px;
         /* Adjust based on the size of the card */
-        color: white;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
         /* White text for contrast */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -303,7 +304,7 @@
         position: absolute;
         top: 10px;
         right: 20px;
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 28px;
         font-weight: bold;
         cursor: pointer;
@@ -333,8 +334,9 @@
     }
 
     .card-logo img {
-        width: 100%;
-        height: auto;
+        width: 5rem;
+        height: 100%;
+        margin-left: -20px;
     }
 
     /* Estilo y posicionamiento del logo de Mercado Pago */
